@@ -5,6 +5,10 @@
 
 <p align="left"> <a href="https://github.com/ryo-ma/github-profile-trophy"><img src="https://github-profile-trophy.vercel.app/?username=mdyhakash" alt="mdyhakash" /></a> </p>
 
+## 
+
+![snake gif](https://github.com/mdyhakash/mdyhakash/blob/output/github-contribution-grid-snake.gif)
+
 - 🌱 I’m currently learning **Django, React Native**
 
 - 💬 Ask me about **ReactJS, NextJS**
@@ -31,8 +35,6 @@
 
 <p><img align="center" src="https://github-readme-streak-stats.herokuapp.com/?user=mdyhakash&" alt="mdyhakash" /></p>
 
-## 
 
-<img src="https://raw.githubusercontent.com/maurodesouza/maurodesouza/output/snake.svg" alt="Snake animation" />
 
 ###
