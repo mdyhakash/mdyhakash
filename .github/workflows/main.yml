@@ -29,4 +29,5 @@ jobs:
         env:
           ACTIONS_PAT: ${{ secrets.ACTIONS_PAT }}
         run: |
-          git push https://$ACTIONS_PAT@github.com/mdyhakash/mdyhakash.git HEAD:master
+          git remote set-url origin https://${{ secrets.ACTIONS_PAT }}@github.com/mdyhakash/mdyhakash.git
+          git push origin HEAD:master
