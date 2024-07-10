@@ -1,5 +1,5 @@
 name: Generate snake
- 
+
 on:
   push:
     branches:
@@ -29,5 +29,5 @@ jobs:
         env:
           ACTIONS_PAT: ${{ secrets.ACTIONS_PAT }}
         run: |
-          git remote set-url origin https://${{ secrets.ACTIONS_PAT }}@github.com/mdyhakash/mdyhakash.git
+          git remote set-url origin https://$ACTIONS_PAT@github.com/mdyhakash/mdyhakash.git
           git push origin HEAD:master
