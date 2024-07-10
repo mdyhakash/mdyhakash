@@ -1,5 +1,5 @@
 name: Generate snake
-
+ 
 on:
   push:
     branches:
