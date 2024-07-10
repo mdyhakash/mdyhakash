@@ -1,31 +1,34 @@
-name: Push to Master
+name: Generate snake animation
 
 on:
+  schedule: # execute every 12 hours
+    - cron: "* */12 * * *"
+
+  workflow_dispatch:
+
   push:
     branches:
-      - master
+    - master
 
 jobs:
-  push_to_master:
+  generate:
+    permissions:
+      contents: write
     runs-on: ubuntu-latest
+    timeout-minutes: 5
+
     steps:
-      - name: Checkout repository
-        uses: actions/checkout@v2
+      - name: generate snake.svg
+        uses: Platane/snk/svg-only@v3
+        with:
+          github_user_name: ${{ github.repository_owner }}
+          outputs: dist/snake.svg?palette=github-dark
 
-      - name: Set up Git
-        run: |
-          git config --global user.name 'github-actions[bot]'
-          git config --global user.email 'github-actions[bot]@users.noreply.github.com'
 
-      - name: Make changes (example)
-        run: |
-          # Make some changes here
-          echo "Some changes" >> file.txt
-          git add .
-          git commit -m "Made some changes"
-
-      - name: Push changes
+      - name: push snake.svg to the output branch
+        uses: crazy-max/ghaction-github-pages@v3.1.0
+        with:
+          target_branch: output
+          build_dir: dist
         env:
-          ACTIONS_PAT: ${{ secrets.ACTIONS_PAT }}
-        run: |
-          git push https://$ACTIONS_PAT@github.com/mdyhakash/mdyhakash.git HEAD:master
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
