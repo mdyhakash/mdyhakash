@@ -29,6 +29,11 @@
   </a>
 </p>
 
+
+## 🐍 My contributions
+![snake gif](https://github.com/mdyhakash/mdyhakash/blob/output/github-contribution-grid-snake.svg)
+
+
 ## Languages and Tools:
 
 <p align="left"> 
