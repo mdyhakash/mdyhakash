@@ -29,11 +29,6 @@
   </a>
 </p>
 
-
-## 🐍 My contributions
-![snake gif](https://github.com/mdyhakash/mdyhakash/blob/output/github-contribution-grid-snake.svg)
-
-
 ## Languages and Tools:
 
 <p align="left"> 
@@ -76,6 +71,11 @@
 <p>&nbsp;<img align="center" src="https://github-readme-stats.vercel.app/api?username=mdyhakash&show_icons=true&locale=en&theme=radical" alt="mdyhakash" /></p>
 
 <p><img align="center" src="https://github-readme-streak-stats.herokuapp.com/?user=mdyhakash&theme=radical" alt="mdyhakash" /></p>
+
+
+## 🐍 My contributions
+![snake gif](https://github.com/mdyhakash/mdyhakash/blob/output/github-contribution-grid-snake.svg)
+
 
 ## 🏆 My Small But Motivating Achievements:
 
