@@ -72,11 +72,6 @@
 
 <p><img align="center" src="https://github-readme-streak-stats.herokuapp.com/?user=mdyhakash&theme=radical" alt="mdyhakash" /></p>
 
-
-## 🐍 My contributions
-![snake gif](https://github.com/mdyhakash/mdyhakash/blob/output/github-contribution-grid-snake.svg)
-
-
 ## 🏆 My Small But Motivating Achievements:
 
 In the arena of code 🏁, accolades adorn the valorous 🏆. Here stand my trophies 🏅:
@@ -86,4 +81,3 @@ In the arena of code 🏁, accolades adorn the valorous 🏆. Here stand my trop
     <img src="https://github-profile-trophy.vercel.app/?username=mdyhakash&theme=dracula" alt="mdyhakash" />
   </a>
 </p>
-
