@@ -72,12 +72,4 @@
 
 <p><img align="center" src="https://github-readme-streak-stats.herokuapp.com/?user=mdyhakash&theme=radical" alt="mdyhakash" /></p>
 
-## 🏆 My Small But Motivating Achievements:
 
-In the arena of code 🏁, accolades adorn the valorous 🏆. Here stand my trophies 🏅:
-
-<p align="left">
-  <a href="https://github.com/ryo-ma/github-profile-trophy">
-    <img src="https://github-profile-trophy.vercel.app/?username=mdyhakash&theme=dracula" alt="mdyhakash" />
-  </a>
-</p>
