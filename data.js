@@ -22,3 +22,19 @@ export const socialMedia = [
     link: "https://www.linkedin.com/in/mdyhakash/",
   },
 ];
+export const workExperience = [
+  {
+    id: 1,
+    title: "Frontend Web Developer",
+    desc: "Intern at Eutropia IT - Contributed to building engaging and responsive web interfaces.",
+    className: "md:col-span-2",
+    thumbnail: "/exp2.svg",
+  },
+  {
+    id: 2,
+    title: "Hackathon Participant",
+    desc: "Participated in 2 national hackathons, showcasing problem-solving and teamwork skills.",
+    className: "md:col-span-2",
+    thumbnail: "/exp1.svg",
+  },
+];

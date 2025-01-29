@@ -1,3 +1,4 @@
+import Experience from "./components/Experience";
 import Footer from "./components/Footer";
 import Hero from "./components/Hero";
 
@@ -6,6 +7,7 @@ const page = () => {
     <main className="relative bg-black-100 flex justify-center items-center flex-col mx-auto sm:px-10 px-5 overflow-clip">
       <div className="max-w-7xl w-full">
         <Hero />
+        <Experience />
         <Footer />
       </div>
     </main>

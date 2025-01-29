@@ -1,12 +1,12 @@
+import { cn } from "@/app/utils/cn"; // Make sure to import the cn utility
+
 const Spotlight = ({ className, fill }) => {
   const defaultClasses =
     "animate-spotlight pointer-events-none absolute z-[1] h-[169%] w-[138%] lg:w-[84%] opacity-0";
 
-  const combinedClasses = `${defaultClasses} ${className || ""}`;
-
   return (
     <svg
-      className={combinedClasses}
+      className={cn(defaultClasses, className)} // Use cn for combining class names
       xmlns="http://www.w3.org/2000/svg"
       viewBox="0 0 3787 2842"
       fill="none"
