@@ -14,7 +14,7 @@
   <strong>UAP SNH Club – </strong> <a href="https://www.linkedin.com/posts/siratulislam_hackathon-softwareshowcase-teamwork-activity-7327319864807751680-Y3eC?utm_source=share&utm_medium=member_desktop&rcm=ACoAADQCxKkBKANerbQ4qZ1WctORVcBOKQpnjEU">INNOVATEX 2025</a> <sub>(May 2025) </sub>
 
 - 🎖️ **4th Place** – Hackathon  
-  <strong>MIST Innovation Club – </strong> <a href="https://www.linkedin.com/posts/sultana-rupa-3662a3318_we-the-mavericks-participated-in-the-mist-activity-7304528490811269121-u0cB?utm_source=share&utm_medium=member_desktop&rcm=ACoAADQCxKkBKANerbQ4qZ1WctORVcBOKQpnjEU">NEOFETCH Hackathon</a> <sub>(March 2025) </sub>
+  <strong>MIST Innovation Club – </strong> <a href="https://www.linkedin.com/posts/sultana-rupa-3662a3318_we-the-mavericks-participated-in-the-mist-activity-7304528490811269121-u0cB?utm_source=share&utm_medium=member_desktop&rcm=ACoAADQCxKkBKANerbQ4qZ1WctORVcBOKQpnjEU">Inventious 4.1 Hackathon</a> <sub>(March 2025) </sub>
 
 <br/>
 ## 🌐 Socials:
