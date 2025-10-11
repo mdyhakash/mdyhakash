@@ -44,6 +44,11 @@ const onlineCourses = [
     year: "2025",
   },
   {
+    title: "React Native App Development",
+    provider: "Youtube",
+    year: "2025",
+  },
+  {
     title: "System Design Architecture",
     provider: "Youtube",
     year: "2025",
