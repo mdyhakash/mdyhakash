@@ -60,7 +60,7 @@ export const projects = [
     title: "Adibas – E-commerce Website (Frontend)",
     description:
       "Adibas is a full featured e-commerce website with search and optimized product filtering, product sorting for easy navigation, and an add to cart feature for a streamlined shopping experience.",
-    image: "/adibas.png",
+    image: "/adibas.PNG",
     tech: ["HTML", "CSS", "Tailwind CSS", "JavaScript", "React.js"],
     github: "https://github.com/mdyhakash/eCommerce",
     live: "https://e-commerce-mdyhakash.vercel.app/",
