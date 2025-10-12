@@ -1,18 +1,19 @@
-"use client"
+"use client";
 
-import { motion } from "framer-motion"
-import { useEffect, useState } from "react"
+import { motion } from "framer-motion";
+import { useEffect, useState } from "react";
+import { personalInfo } from "@/lib/data";
 
 export function Hero() {
-  const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 })
+  const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
 
   useEffect(() => {
     const handleMouseMove = (e: MouseEvent) => {
-      setMousePosition({ x: e.clientX, y: e.clientY })
-    }
-    window.addEventListener("mousemove", handleMouseMove)
-    return () => window.removeEventListener("mousemove", handleMouseMove)
-  }, [])
+      setMousePosition({ x: e.clientX, y: e.clientY });
+    };
+    window.addEventListener("mousemove", handleMouseMove);
+    return () => window.removeEventListener("mousemove", handleMouseMove);
+  }, []);
 
   return (
     <section className="relative min-h-[100svh] flex items-center justify-center overflow-hidden px-4 sm:px-6">
@@ -25,7 +26,11 @@ export function Hero() {
       />
 
       <div className="relative z-10 w-full max-w-7xl mx-auto py-20 sm:py-24 md:py-32">
-        <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5 }}>
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5 }}
+        >
           <motion.p
             className="text-accent font-mono text-sm sm:text-base mb-4 sm:mb-5"
             initial={{ opacity: 0 }}
@@ -37,22 +42,22 @@ export function Hero() {
 
           <motion.h1
             className="font-bold mb-3 sm:mb-4 text-foreground"
-            style={{ fontSize: "clamp(2.5rem, 8vw, 4rem)" }}
+            style={{ fontSize: "clamp(2.5rem, 8vw, 5.5rem)" }}
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.2 }}
           >
-            Md Yasin Hossain Akash.
+            {personalInfo.name}.
           </motion.h1>
 
           <motion.h2
             className="font-bold mb-4 sm:mb-6 text-muted-foreground"
-            style={{ fontSize: "clamp(2rem, 6vw, 2rem)" }}
+            style={{ fontSize: "clamp(2rem, 6vw, 2.5rem)" }}
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.3 }}
           >
-            I build exceptional digital experiences.
+            {personalInfo.tagline}
           </motion.h2>
 
           <motion.p
@@ -61,8 +66,7 @@ export function Hero() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.4 }}
           >
-            I'm a fullstack developer specializing in building exceptional digital experiences. Currently, I'm focused
-            on creating accessible, pixel-perfect user interfaces that blend thoughtful design with robust engineering.
+            {personalInfo.description}
           </motion.p>
 
           <motion.div
@@ -106,5 +110,5 @@ export function Hero() {
         </motion.div>
       </motion.div>
     </section>
-  )
+  );
 }

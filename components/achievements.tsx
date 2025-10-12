@@ -1,56 +1,29 @@
-"use client"
+"use client";
 
-import { motion } from "framer-motion"
-import { useInView } from "framer-motion"
-import { useRef } from "react"
-import { Award, Star, Code, Zap } from "lucide-react"
+import { motion } from "framer-motion";
+import { useInView } from "framer-motion";
+import { useRef } from "react";
+import { Award, Star, Code, Zap, Trophy } from "lucide-react";
+import { achievements, certifications } from "@/lib/data";
 
-const achievements = [
-  {
-    icon: Award,
-    title: "AWS Certified Solutions Architect",
-    organization: "Amazon Web Services",
-    date: "2024",
-    description: "Professional level certification for designing distributed systems on AWS.",
-  },
-  {
-    icon: Star,
-    title: "GitHub Star",
-    organization: "GitHub",
-    date: "2023",
-    description: "Recognized for outstanding contributions to open source projects.",
-  },
-  {
-    icon: Code,
-    title: "Google Developer Expert",
-    organization: "Google",
-    date: "2023",
-    description: "Expert in Web Technologies and Angular framework.",
-  },
-  {
-    icon: Zap,
-    title: "Top 1% on Stack Overflow",
-    organization: "Stack Overflow",
-    date: "2022",
-    description: "Ranked in top 1% for JavaScript and React contributions.",
-  },
-]
-
-const certifications = [
-  "AWS Certified Solutions Architect - Professional",
-  "Google Cloud Professional Developer",
-  "Meta Front-End Developer Professional Certificate",
-  "MongoDB Certified Developer",
-  "Docker Certified Associate",
-  "Kubernetes Administrator (CKA)",
-]
+const iconMap = {
+  Award,
+  Star,
+  Code,
+  Zap,
+  Trophy,
+};
 
 export function Achievements() {
-  const ref = useRef(null)
-  const isInView = useInView(ref, { once: true, margin: "-100px" })
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: true, margin: "-100px" });
 
   return (
-    <section id="achievements" className="py-16 sm:py-24 md:py-32 px-4 sm:px-6 lg:px-8 bg-muted/30" ref={ref}>
+    <section
+      id="achievements"
+      className="py-16 sm:py-24 md:py-32 px-4 sm:px-6 lg:px-8 bg-muted/30"
+      ref={ref}
+    >
       <div className="max-w-6xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 50 }}
@@ -58,18 +31,21 @@ export function Achievements() {
           transition={{ duration: 0.5 }}
         >
           <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-3 sm:mb-4 flex items-center gap-3 sm:gap-4">
-            <span className="text-accent font-mono text-xl sm:text-2xl">04.</span>
+            <span className="text-accent font-mono text-xl sm:text-2xl">
+              04.
+            </span>
             Achievements & Recognition
             <span className="hidden sm:block flex-1 h-px bg-border ml-4" />
           </h2>
 
           <p className="text-muted-foreground mb-8 sm:mb-12 max-w-2xl text-sm sm:text-base">
-            Awards, certifications, and recognition I've received throughout my journey as a developer.
+            Awards, certifications and academic recognitions I've received
+            throughout my journey.
           </p>
 
           <div className="grid md:grid-cols-2 gap-4 sm:gap-6 mb-12 sm:mb-16">
             {achievements.map((achievement, index) => {
-              const Icon = achievement.icon
+              const Icon = iconMap[achievement.icon as keyof typeof iconMap];
               return (
                 <motion.div
                   key={achievement.title}
@@ -88,7 +64,9 @@ export function Achievements() {
                         {achievement.title}
                       </h3>
                       <div className="flex flex-wrap items-center gap-1 sm:gap-2 text-xs sm:text-sm text-muted-foreground mb-2">
-                        <span className="text-balance">{achievement.organization}</span>
+                        <span className="text-balance">
+                          {achievement.organization}
+                        </span>
                         <span>•</span>
                         <span>{achievement.date}</span>
                       </div>
@@ -98,7 +76,7 @@ export function Achievements() {
                     </div>
                   </div>
                 </motion.div>
-              )
+              );
             })}
           </div>
 
@@ -107,7 +85,9 @@ export function Achievements() {
             animate={isInView ? { opacity: 1, y: 0 } : {}}
             transition={{ delay: 0.4 }}
           >
-            <h3 className="text-xl sm:text-2xl font-bold mb-5 sm:mb-6 text-foreground">Certifications</h3>
+            <h3 className="text-xl sm:text-2xl font-bold mb-5 sm:mb-6 text-foreground">
+              Certifications
+            </h3>
             <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-4">
               {certifications.map((cert, index) => (
                 <motion.div
@@ -128,7 +108,9 @@ export function Achievements() {
                       clipRule="evenodd"
                     />
                   </svg>
-                  <span className="text-xs sm:text-sm text-muted-foreground text-balance">{cert}</span>
+                  <span className="text-xs sm:text-sm text-muted-foreground text-balance">
+                    {cert}
+                  </span>
                 </motion.div>
               ))}
             </div>
@@ -136,5 +118,5 @@ export function Achievements() {
         </motion.div>
       </div>
     </section>
-  )
+  );
 }
