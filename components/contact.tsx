@@ -174,6 +174,15 @@ export function Contact() {
               </motion.button>
             </div>
           </motion.form>
+          <motion.div
+            className="text-center text-xs sm:text-sm text-muted-foreground font-mono"
+            initial={{ opacity: 0 }}
+            animate={isInView ? { opacity: 1 } : {}}
+            transition={{ delay: 0.6 }}
+          >
+            <p>Designed & Built by mdyhakash</p>
+            <p className="mt-2">© 2025 All rights reserved</p>
+          </motion.div>
         </motion.div>
       </div>
     </section>
