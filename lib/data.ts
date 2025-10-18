@@ -29,12 +29,11 @@ export const socialLinks = [
 
 export const about = {
   paragraphs: [
-    "Hey there! I'm Md Yasin Hossain Akash, but most people call me akash. I'm a fullstack developer who genuinely enjoys the process of turning ideas into functional applications. My journey in tech has been driven by curiosity and a love for solving problems through code.",
-    "Currently pursuing my BSc in Computer Science Engineering at UAP, I've been fortunate to participate in various hackathons where I've not only tested my skills but also learned to thrive under pressure. Winning Champion at INNOVATEX 2025 and securing other positions in competitive hackathons has taught me that great software is built through collaboration and continuous learning.",
-    "Over the years, I've built more than 40 projects both small and big and Production level each one teaching me something new about development, problem solving, and what it takes to ship quality software.",
-    "These days, I'm diving deep into React Native app development while working on my thesis focused on implementing a double layer security system for IoT networks in smart healthcare systems.",
-    "When it comes to development, I prioritize writing clean, maintainable code and creating user friendly interfaces. I'm always exploring new technologies and methodologies to enhance my skill set and stay updated with industry trends.",
-    "When I'm not coding, I'm usually playing Valorant, Minecraft, or FIFA, traveling to new places, or watching movies and web series. I'm a huge fan of Harry Potter, Game of Thrones, and anime especially Demon Slayer.",
+    "Hey there! I'm Md Yasin Hossain Akash, but most people call me Akash. I'm a fullstack developer who loves turning ideas into functional applications.",
+    "Currently pursuing my BSc in Computer Science Engineering at UAP, I've competed in various hackathons, including winning Champion at INNOVATEX 2025. I've built over 40 projects, each teaching me something new about development and shipping quality software.",
+    "Right now, I'm diving deep into React Native app development while working on my thesis about implementing a double layer security system for IoT networks in smart healthcare systems.",
+    "I prioritize writing clean, maintainable code and creating user-friendly interfaces. I'm always exploring new technologies to enhance my skills and stay current with industry trends.",
+    "When I'm not coding, you'll find me playing Valorant, Minecraft, or FIFA, traveling, or binge-watching movies and series. I'm a huge fan of Harry Potter, Game of Thrones, and anime especially Demon Slayer.",
   ],
   image: "/myphoto.jpg",
 };
@@ -268,11 +267,11 @@ export const education = [
 ];
 
 export const onlineCourses = [
-  {
-    title: "Machine Learning Fundamentals",
-    provider: "Self-Learning",
-    year: "2025 - Present",
-  },
+  // {
+  //   title: "Machine Learning Fundamentals",
+  //   provider: "Self-Learning",
+  //   year: "2025 - Present",
+  // },
   {
     title: "React Native App Development",
     provider: "Self-Learning",
