@@ -148,7 +148,7 @@ export const hackathons = [
     project: "Neo Campus",
     award: "4th Place in MIST and Champion in Software Showcase (UAP)",
     description:
-      "Building a unified platform where universities, students, and industry partners collaborate to solve real-world challenges and develop industry-relevant skills.",
+      "All-in-one student app providing campus services and information in real-time. NeoCampus serves as your essential campus companion.",
     team: 4,
     tech: [
       "React.js",
@@ -166,14 +166,15 @@ export const hackathons = [
     project: "MediCare",
     award: "Participant",
     description:
-      "Connecting patients, healthcare providers, and AI technology on a single platform to transform complex medical documents into clear, actionable insights.",
+      "AI-powered healthcare platform revolutionizing medical system with features like disease detection, a smart symptom checker, and AI-driven prescription guidance. With multilingual support, emergency care access, and hospital management tools, it ensures accessible, personalized, and efficient healthcare for all.",
     team: 4,
     tech: [
-      "React.js",
+      "React",
       "Next.js",
       "TanStack Query",
       "Express.js",
       "MongoDB",
+      "Socket.io",
       "OpenAI API",
     ],
   },
