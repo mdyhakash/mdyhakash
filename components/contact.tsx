@@ -1,19 +1,13 @@
 "use client";
 
-import type React from "react";
-
+import { useRef, useState } from "react";
 import { motion } from "framer-motion";
 import { useInView } from "framer-motion";
-import { useRef, useState } from "react";
-import { Mail, Github, Linkedin, X, Send } from "lucide-react";
-import { socialLinks, personalInfo } from "@/lib/data";
+import { Send, Mail, Github, Linkedin, X } from "lucide-react";
+import emailjs from "@emailjs/browser";
+import { toast } from "react-toastify";
 
-const iconMap = {
-  Github,
-  Linkedin,
-  X,
-  Mail,
-};
+const iconMap = { Github, Linkedin, X, Mail };
 
 export function Contact() {
   const ref = useRef(null);
@@ -29,22 +23,49 @@ export function Contact() {
     e.preventDefault();
     setIsSubmitting(true);
 
-    const subject = encodeURIComponent(
-      `Portfolio Contact from ${formData.name}`
-    );
-    const body = encodeURIComponent(
-      `Name: ${formData.name}\nEmail: ${formData.email}\n\nMessage:\n${formData.message}`
-    );
-    const mailtoLink = `mailto:${personalInfo.email}?subject=${subject}&body=${body}`;
-
-    // Open email client
-    window.location.href = mailtoLink;
-
-    // Reset form after a short delay
-    setTimeout(() => {
-      setFormData({ name: "", email: "", message: "" });
-      setIsSubmitting(false);
-    }, 1000);
+    emailjs
+      .send(
+        process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID!,
+        process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID!,
+        {
+          name: formData.name,
+          email: formData.email,
+          message: formData.message,
+        },
+        process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY!
+      )
+      .then(
+        () => {
+          toast.success(
+            "Message sent successfully! I'll get back to you soon.",
+            {
+              position: "bottom-right",
+              autoClose: 5000,
+              hideProgressBar: false,
+              closeOnClick: true,
+              pauseOnHover: true,
+              draggable: true,
+            }
+          );
+          setFormData({ name: "", email: "", message: "" });
+          setIsSubmitting(false);
+        },
+        (error) => {
+          console.error("Email send error:", error);
+          toast.error(
+            error.text || "Failed to send message. Please try again.",
+            {
+              position: "bottom-right",
+              autoClose: 5000,
+              hideProgressBar: false,
+              closeOnClick: true,
+              pauseOnHover: true,
+              draggable: true,
+            }
+          );
+          setIsSubmitting(false);
+        }
+      );
   };
 
   return (
@@ -116,7 +137,7 @@ export function Contact() {
                     setFormData({ ...formData, email: e.target.value })
                   }
                   className="w-full px-4 py-3 sm:py-3.5 bg-card border border-border rounded focus:outline-none focus:ring-2 focus:ring-accent text-foreground text-base min-h-[44px]"
-                  placeholder="your.email@example.com"
+                  placeholder="your.email@gmail.com"
                   required
                 />
               </div>
@@ -149,47 +170,10 @@ export function Contact() {
                 whileTap={{ scale: isSubmitting ? 1 : 0.98 }}
               >
                 <Send className="w-4 h-4" />
-                {isSubmitting ? "Opening Email..." : "Send Message"}
+                {isSubmitting ? "Sending..." : "Send Message"}
               </motion.button>
             </div>
           </motion.form>
-
-          <motion.div
-            className="flex justify-center gap-4 sm:gap-6 mb-8 sm:mb-12"
-            initial={{ opacity: 0, y: 30 }}
-            animate={isInView ? { opacity: 1, y: 0 } : {}}
-            transition={{ delay: 0.4 }}
-          >
-            {socialLinks.map((social, index) => {
-              const Icon = iconMap[social.icon as keyof typeof iconMap];
-              return (
-                <motion.a
-                  key={social.label}
-                  href={social.href}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="p-3 bg-card border border-border rounded-lg hover:border-accent transition-colors group touch-manipulation min-w-[44px] min-h-[44px] flex items-center justify-center"
-                  whileHover={{ y: -4 }}
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={isInView ? { opacity: 1, y: 0 } : {}}
-                  transition={{ delay: 0.5 + index * 0.1 }}
-                  aria-label={social.label}
-                >
-                  <Icon className="w-5 h-5 sm:w-6 sm:h-6 text-muted-foreground group-hover:text-accent transition-colors" />
-                </motion.a>
-              );
-            })}
-          </motion.div>
-
-          <motion.div
-            className="text-center text-xs sm:text-sm text-muted-foreground font-mono"
-            initial={{ opacity: 0 }}
-            animate={isInView ? { opacity: 1 } : {}}
-            transition={{ delay: 0.6 }}
-          >
-            <p>Designed & Built by {personalInfo.name}</p>
-            <p className="mt-2">© 2025 All rights reserved</p>
-          </motion.div>
         </motion.div>
       </div>
     </section>

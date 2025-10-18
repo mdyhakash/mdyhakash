@@ -42,7 +42,7 @@ export function Hero() {
 
           <motion.h1
             className="font-bold mb-3 sm:mb-4 text-foreground"
-            style={{ fontSize: "clamp(2.5rem, 8vw, 5.5rem)" }}
+            style={{ fontSize: "clamp(2.5rem, 8vw, 5.3rem)" }}
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.2 }}
@@ -52,7 +52,7 @@ export function Hero() {
 
           <motion.h2
             className="font-bold mb-4 sm:mb-6 text-muted-foreground"
-            style={{ fontSize: "clamp(2rem, 6vw, 2.5rem)" }}
+            style={{ fontSize: "clamp(2rem, 6vw, 2.1rem)" }}
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.3 }}
@@ -61,7 +61,7 @@ export function Hero() {
           </motion.h2>
 
           <motion.p
-            className="text-base sm:text-lg md:text-xl text-muted-foreground max-w-2xl mb-8 sm:mb-12 leading-relaxed"
+            className="text-base sm:text-lg md:text-md text-muted-foreground max-w-2xl mb-8 sm:mb-12 leading-relaxed"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.4 }}

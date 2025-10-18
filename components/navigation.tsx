@@ -3,6 +3,7 @@
 import type React from "react";
 
 import { useState, useEffect } from "react";
+import { useRouter, usePathname } from "next/navigation";
 import { motion, AnimatePresence } from "framer-motion";
 import { X, Menu } from "lucide-react";
 
@@ -13,19 +14,29 @@ const navItems = [
   { name: "Achievements", href: "#achievements" },
   { name: "Education", href: "#education" },
   { name: "Contact", href: "#contact" },
+  { name: "Moments", href: "/moments" },
 ];
 
 export function Navigation() {
   const [activeSection, setActiveSection] = useState("about");
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const router = useRouter();
+  const pathname = usePathname();
 
   useEffect(() => {
+    if (pathname === "/moments") {
+      setActiveSection("moments");
+      return;
+    }
+
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 50);
 
       // Update active section based on scroll position
-      const sections = navItems.map((item) => item.href.slice(1));
+      const sections = navItems
+        .map((item) => item.href.slice(1))
+        .filter((s) => s.startsWith("#"));
       const current = sections.find((section) => {
         const element = document.getElementById(section);
         if (element) {
@@ -39,13 +50,28 @@ export function Navigation() {
 
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
+  }, [pathname]);
 
   const handleClick = (
     e: React.MouseEvent<HTMLAnchorElement>,
     href: string
   ) => {
     e.preventDefault();
+
+    // If href starts with /, it's a page link - use router
+    if (href.startsWith("/")) {
+      router.push(href);
+      setIsMobileMenuOpen(false);
+      return;
+    }
+
+    if (pathname === "/moments" && href.startsWith("#")) {
+      router.push("/" + href);
+      setIsMobileMenuOpen(false);
+      return;
+    }
+
+    // Otherwise, it's an anchor link on the main page - scroll to it
     const element = document.querySelector(href);
     if (element) {
       element.scrollIntoView({ behavior: "smooth" });
@@ -68,7 +94,7 @@ export function Navigation() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between h-16 sm:h-20">
             <motion.a
-              href="#"
+              href="/"
               className="text-lg sm:text-xl font-bold font-mono"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}

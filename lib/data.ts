@@ -8,6 +8,24 @@ export const personalInfo = {
   linkedin: "https://linkedin.com/in/mdyhakash",
   twitter: "https://twitter.com/mdyhakash",
 };
+export const socialLinks = [
+  { icon: "Github", href: "https://github.com/mdyhakash", label: "GitHub" },
+  {
+    icon: "Linkedin",
+    href: "https://linkedin.com/in/mdyhakash",
+    label: "LinkedIn",
+  },
+  {
+    icon: "X",
+    href: "https://x.com/mdyhakash",
+    label: "X",
+  },
+  {
+    icon: "Mail",
+    href: "https://mail.google.com/mail/?view=cm&fs=1&to=mdyhakash@gmail.com",
+    label: "Email",
+  },
+];
 
 export const about = {
   paragraphs: [
@@ -116,10 +134,10 @@ export const hackathons = [
   {
     name: "INNOVATEX 2025",
     date: "May 2025",
-    project: "Hackathon",
+    project: "Skill Bridge",
     award: "1st Runners-Up",
     description:
-      "Achieved 1st Runners-Up in the INNOVATEX 2025 Hackathon organized by UAP SNH Club. Developed an innovative full-stack project showcasing creativity, technical skills, and teamwork.",
+      "Bridging the gap between education and industry Connect universities, students, and industry partners on a single platform to solve real-world problems and build industry-relevant skills.",
     team: 4,
     tech: ["React", "Node.js", "MongoDB", "Express.js"],
   },
@@ -127,32 +145,47 @@ export const hackathons = [
   {
     name: "Inventious 4.1 Hackathon",
     date: "February 2025",
-    project: "Innovative Web Solution",
-    award: "4th Place",
+    project: "Neo Campus",
+    award: "4th Place in MIST and Champion in Software Showcase (UAP)",
     description:
-      "Participated in the Inventious 4.1 Hackathon, building innovative solutions and collaborating with talented developers.",
+      "Building a unified platform where universities, students, and industry partners collaborate to solve real-world challenges and develop industry-relevant skills.",
     team: 4,
-    tech: ["Next.js", "TypeScript", "Tailwind CSS"],
+    tech: [
+      "React.js",
+      "Next.js",
+      "TanStack Query",
+      "Express.js",
+      "MongoDB",
+      "OpenAI API",
+      "Docker",
+    ],
   },
   {
     name: "Harvard Health Systems Innovation Hackathon",
     date: "April 2025",
-    project: "Healthcare IoT Solution",
+    project: "MediCare",
     award: "Participant",
     description:
-      "Developed a healthcare focused solution addressing real world challenges in the medical industry using IoT technologies.",
+      "Connecting patients, healthcare providers, and AI technology on a single platform to transform complex medical documents into clear, actionable insights.",
     team: 4,
-    tech: ["React", "IoT", "Node.js", "Security Systems"],
+    tech: [
+      "React.js",
+      "Next.js",
+      "TanStack Query",
+      "Express.js",
+      "MongoDB",
+      "OpenAI API",
+    ],
   },
   {
     name: "Web Xtreme 2025 Hackathon",
     date: "February 2025",
-    project: "Advanced Web Application",
+    project: "Reportify",
     award: "Participant",
     description:
-      "Built a cutting edge web application showcasing modern web development practices and innovative features.",
+      "Crime Reporting & Verification Platform A secure web platform leveraging AI to validate and manage crime reports with community oversight.",
     team: 4,
-    tech: ["React", "Express.js", "MongoDB", "WebSockets"],
+    tech: ["React.js", "Next.js", "MongoDB", "GROQ API", "HF API"],
   },
 ];
 
@@ -258,19 +291,4 @@ export const currentlyWorkingOn = [
     startDate: "2025",
     expectedCompletion: "2026",
   },
-];
-
-export const socialLinks = [
-  { icon: "Github", href: "https://github.com/mdyhakash", label: "GitHub" },
-  {
-    icon: "Linkedin",
-    href: "https://linkedin.com/in/mdyhakash",
-    label: "LinkedIn",
-  },
-  {
-    icon: "X",
-    href: "https://x.com/mdyhakash",
-    label: "X",
-  },
-  { icon: "Mail", href: "mailto:mdyhakash@gmail.com", label: "Email" },
 ];
