@@ -282,11 +282,11 @@ export const onlineCourses = [
 export const currentlyWorkingOn = [
   {
     title:
-      "EC-RSM, VC - Double Layer Security System in IoT Network for Smart Healthcare System",
+      "Double Layer Security System in IoMT Network for Smart Healthcare System",
     description:
       "Developing an advanced double layer security system for IoT networks specifically designed for smart healthcare applications.",
     status: "In Progress",
-    progress: 5,
+    progress: 50,
     tech: ["Cryptography", "Machine Learning", "Networking", " Security"],
     startDate: "2025",
     expectedCompletion: "2026",

@@ -1,9 +1,9 @@
 <h1 align="">Hi 👋, I'm Md Yasin Hossain Akash</h1>
-<h3 align="">A Passionate Frontend Web Developer from Bangladesh</h3>
+<h3 align="">A Passionate Full-Stack Web Developer from Bangladesh</h3>
 
 # 💫 About Me:
 
-🔭 I’m currently working on ReactJS and NextJS<br>🌱 I’m currently learning Django, REST API<br>💬 Ask me about ReactJS, NextJS<br>📫 How to reach me mdyhakash@gmail.com
+🔭 I’m currently working on ReactJS and NextJS<br>🌱 I’m currently learning Node, Express<br>💬 Ask me about ReactJS, NextJS<br>📫 How to reach me mdyhakash@gmail.com
 
 ### 🏆 Achievements
 
