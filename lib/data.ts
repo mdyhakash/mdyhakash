@@ -206,6 +206,15 @@ export const achievements = [
     icon: "Award",
   },
   {
+    title:
+      "Paper Accepted – Doctoral Symposium on Computational Intelligence 2026",
+    organization: "DoSCI (Springer LNNS)",
+    date: "2026",
+    description:
+      "Research paper titled 'IoT in Healthcare Systems Using Machine Learning, Deep Learning, and Cryptosystems: Threats and Future Research Directions' accepted for publication. Ranked among the top 20% of submissions and to be published in Springer LNNS, indexed by SCOPUS, WoS, EI, and DBLP.",
+    icon: "Award",
+  },
+  {
     title: "1st Runners-Up – Hackathon",
     organization: "UAP SNH Club – INNOVATEX 2025",
     date: "May 2025",
@@ -240,7 +249,10 @@ export const achievements = [
   },
 ];
 
-export const certifications = ["Frontend Web Developer Intern at Eutropia IT"];
+export const certifications = [
+  "Frontend Web Developer Intern at Eutropia IT",
+  "Junior Software Engineer Intern at Datavro",
+];
 
 export const education = [
   {
@@ -272,10 +284,20 @@ export const onlineCourses = [
   //   provider: "Self-Learning",
   //   year: "2025 - Present",
   // },
+  // {
+  //   title: "React Native App Development",
+  //   provider: "Self-Learning",
+  //   year: "2025 - Present",
+  // },
   {
-    title: "React Native App Development",
+    title: "SQL",
     provider: "Self-Learning",
-    year: "2025 - Present",
+    year: "2026 - Present",
+  },
+  {
+    title: "DSA",
+    provider: "Self-Learning",
+    year: "2026 - Present",
   },
 ];
 
@@ -286,7 +308,7 @@ export const currentlyWorkingOn = [
     description:
       "Developing an advanced double layer security system for IoT networks specifically designed for smart healthcare applications.",
     status: "In Progress",
-    progress: 50,
+    progress: 70,
     tech: ["Cryptography", "Machine Learning", "Networking", " Security"],
     startDate: "2025",
     expectedCompletion: "2026",
