@@ -23,7 +23,7 @@
 
 > *Passionate and driven Full-Stack Web Developer from Bangladesh — building modern, scalable web experiences with React, Next.js, and Node.js.*
 
-- 🔭 Currently working on **ReactJS** and **NextJS** projects
+- 🔭 Currently working on **Express.JS** and **NextJS** projects
 - 🌱 Currently learning **Node.js** and **Express**
 - 💬 Ask me about **ReactJS**, **NextJS**, **Django**
 - 📍 Based in **Dhaka, Bangladesh**
