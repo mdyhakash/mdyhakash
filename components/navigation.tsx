@@ -1,14 +1,15 @@
 "use client";
 
 import type React from "react";
-
 import { useState, useEffect } from "react";
 import { useRouter, usePathname } from "next/navigation";
 import { motion, AnimatePresence } from "framer-motion";
-import { X, Menu } from "lucide-react";
+import { Menu, X } from "lucide-react";
 
 const navItems = [
   { name: "About", href: "#about" },
+  { name: "Skills", href: "#skills" },
+  { name: "Experience", href: "#experience" },
   { name: "Projects", href: "#projects" },
   { name: "Hackathons", href: "#hackathons" },
   { name: "Achievements", href: "#achievements" },
@@ -21,6 +22,7 @@ export function Navigation() {
   const [activeSection, setActiveSection] = useState("about");
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+
   const router = useRouter();
   const pathname = usePathname();
 
@@ -31,52 +33,68 @@ export function Navigation() {
     }
 
     const handleScroll = () => {
-      setIsScrolled(window.scrollY > 50);
+      setIsScrolled(window.scrollY > 20);
 
-      // Update active section based on scroll position
-      const sections = navItems
-        .map((item) => item.href.slice(1))
-        .filter((s) => s.startsWith("#"));
-      const current = sections.find((section) => {
-        const element = document.getElementById(section);
-        if (element) {
-          const rect = element.getBoundingClientRect();
-          return rect.top <= 100 && rect.bottom >= 100;
-        }
-        return false;
-      });
-      if (current) setActiveSection(current);
+      const offset = 140;
+
+      let current = "about";
+
+      navItems
+        .filter((item) => item.href.startsWith("#"))
+        .forEach((item) => {
+          const section = document.getElementById(item.href.slice(1));
+
+          if (!section) return;
+
+          if (window.scrollY >= section.offsetTop - offset) {
+            current = item.href.slice(1);
+          }
+        });
+
+      setActiveSection(current);
     };
 
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, [pathname]);
+    handleScroll();
 
+    window.addEventListener("scroll", handleScroll, {
+      passive: true,
+    });
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, [pathname]);
   const handleClick = (
     e: React.MouseEvent<HTMLAnchorElement>,
-    href: string
+    href: string,
   ) => {
     e.preventDefault();
 
-    // If href starts with /, it's a page link - use router
     if (href.startsWith("/")) {
       router.push(href);
       setIsMobileMenuOpen(false);
       return;
     }
 
-    if (pathname === "/moments" && href.startsWith("#")) {
+    const id = href.slice(1);
+    setActiveSection(id);
+
+    if (pathname === "/moments") {
       router.push("/" + href);
       setIsMobileMenuOpen(false);
       return;
     }
 
-    // Otherwise, it's an anchor link on the main page - scroll to it
-    const element = document.querySelector(href);
+    const element = document.getElementById(id);
+
     if (element) {
-      element.scrollIntoView({ behavior: "smooth" });
-      setIsMobileMenuOpen(false);
+      element.scrollIntoView({
+        behavior: "smooth",
+        block: "start",
+      });
     }
+
+    setIsMobileMenuOpen(false);
   };
 
   return (
@@ -95,51 +113,62 @@ export function Navigation() {
           <div className="flex items-center justify-between h-16 sm:h-20">
             <motion.a
               href="/"
-              className="text-lg sm:text-xl font-bold font-mono"
+              className="flex-shrink-0 whitespace-nowrap text-lg sm:text-xl font-bold font-mono"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
             >
               {"<mdyhakash />"}
             </motion.a>
 
-            <div className="hidden md:flex items-center gap-6 lg:gap-8">
-              {navItems.map((item, index) => (
-                <motion.a
-                  key={item.name}
-                  href={item.href}
-                  onClick={(e) => handleClick(e, item.href)}
-                  className={`relative text-sm font-mono transition-colors ${
-                    activeSection === item.href.slice(1)
-                      ? "text-accent"
-                      : "text-muted-foreground hover:text-foreground"
-                  }`}
-                  initial={{ opacity: 0, y: -20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ delay: index * 0.1 }}
-                  whileHover={{ y: -2 }}
-                >
-                  <span className="text-accent mr-1">0{index + 1}.</span>
-                  {item.name}
-                  {activeSection === item.href.slice(1) && (
-                    <motion.div
-                      layoutId="activeSection"
-                      className="absolute -bottom-1 left-0 right-0 h-0.5 bg-accent"
-                      transition={{
-                        type: "spring",
-                        stiffness: 380,
-                        damping: 30,
-                      }}
-                    />
-                  )}
-                </motion.a>
-              ))}
+            <div className="hidden xl:flex flex-1 justify-end items-center gap-3 ml-10">
+              {navItems.map((item, index) => {
+                const isActive =
+                  activeSection ===
+                  (item.href.startsWith("#")
+                    ? item.href.slice(1)
+                    : item.href.slice(1));
+
+                return (
+                  <motion.a
+                    key={item.name}
+                    href={item.href}
+                    onClick={(e) => handleClick(e, item.href)}
+                    className={`relative whitespace-nowrap text-xs 2xl:text-sm font-mono transition-colors ${
+                      isActive
+                        ? "text-accent"
+                        : "text-muted-foreground hover:text-foreground"
+                    }`}
+                    initial={{ opacity: 0, y: -20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ delay: index * 0.05 }}
+                    whileHover={{ y: -2 }}
+                  >
+                    <span className="text-accent mr-1">
+                      {String(index + 1).padStart(2, "0")}.
+                    </span>
+
+                    {item.name}
+
+                    {isActive && (
+                      <motion.div
+                        layoutId="active-nav"
+                        className="absolute -bottom-1 left-0 right-0 h-0.5 bg-accent"
+                        transition={{
+                          type: "spring",
+                          stiffness: 380,
+                          damping: 30,
+                        }}
+                      />
+                    )}
+                  </motion.a>
+                );
+              })}
             </div>
 
             <motion.button
-              onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-              className="md:hidden p-3 -mr-3 touch-manipulation"
+              onClick={() => setIsMobileMenuOpen((prev) => !prev)}
+              className="xl:hidden p-3 -mr-3"
               whileTap={{ scale: 0.95 }}
-              aria-label="Toggle menu"
             >
               {isMobileMenuOpen ? (
                 <X className="w-6 h-6" />
@@ -154,47 +183,54 @@ export function Navigation() {
       <AnimatePresence>
         {isMobileMenuOpen && (
           <motion.div
+            className="fixed inset-0 z-40 xl:hidden"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            className="fixed inset-0 z-40 md:hidden"
           >
-            {/* Backdrop */}
             <motion.div
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              exit={{ opacity: 0 }}
               className="absolute inset-0 bg-background/95 backdrop-blur-md"
               onClick={() => setIsMobileMenuOpen(false)}
             />
 
-            {/* Menu content */}
             <motion.div
               initial={{ x: "100%" }}
               animate={{ x: 0 }}
               exit={{ x: "100%" }}
-              transition={{ type: "spring", damping: 25, stiffness: 200 }}
-              className="absolute right-0 top-0 bottom-0 w-3/4 max-w-sm bg-card border-l border-border p-6 pt-24 overflow-y-auto"
+              transition={{
+                type: "spring",
+                damping: 24,
+                stiffness: 220,
+              }}
+              className="absolute right-0 top-0 bottom-0 w-3/4 max-w-sm bg-card border-l border-border p-6 pt-24"
             >
               <nav className="flex flex-col gap-2">
-                {navItems.map((item, index) => (
-                  <motion.a
-                    key={item.name}
-                    href={item.href}
-                    onClick={(e) => handleClick(e, item.href)}
-                    className={`flex items-center gap-3 px-4 py-4 rounded font-mono text-base transition-colors touch-manipulation ${
-                      activeSection === item.href.slice(1)
-                        ? "bg-accent/10 text-accent"
-                        : "text-muted-foreground hover:text-foreground hover:bg-muted"
-                    }`}
-                    initial={{ opacity: 0, x: 50 }}
-                    animate={{ opacity: 1, x: 0 }}
-                    transition={{ delay: index * 0.05 }}
-                  >
-                    <span className="text-accent">0{index + 1}.</span>
-                    {item.name}
-                  </motion.a>
-                ))}
+                {navItems.map((item, index) => {
+                  const isActive =
+                    activeSection ===
+                    (item.href.startsWith("#")
+                      ? item.href.slice(1)
+                      : item.href.slice(1));
+
+                  return (
+                    <motion.a
+                      key={item.name}
+                      href={item.href}
+                      onClick={(e) => handleClick(e, item.href)}
+                      className={`flex items-center gap-3 rounded px-4 py-4 font-mono ${
+                        isActive
+                          ? "bg-accent/10 text-accent"
+                          : "text-muted-foreground hover:bg-muted hover:text-foreground"
+                      }`}
+                    >
+                      <span className="text-accent">
+                        {String(index + 1).padStart(2, "0")}.
+                      </span>
+
+                      {item.name}
+                    </motion.a>
+                  );
+                })}
               </nav>
             </motion.div>
           </motion.div>

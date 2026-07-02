@@ -3,8 +3,9 @@
 import { motion } from "framer-motion";
 import { useInView } from "framer-motion";
 import { useRef, useState } from "react";
-import { ExternalLink, Github } from "lucide-react";
+import { ExternalLink, Github, ArrowRight } from "lucide-react";
 import { projects } from "@/lib/data";
+import { ProjectModal } from "@/components/project-modal";
 
 const filters = ["All", "Featured", "Web Apps", "Mobile", "Tools"];
 
@@ -12,6 +13,9 @@ export function Projects() {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: "-100px" });
   const [activeFilter, setActiveFilter] = useState("All");
+  const [selectedProject, setSelectedProject] = useState<
+    (typeof projects)[number] | null
+  >(null);
 
   const filteredProjects = projects.filter((project) => {
     if (activeFilter === "All") return true;
@@ -36,7 +40,7 @@ export function Projects() {
         >
           <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-3 sm:mb-4 flex items-center gap-3 sm:gap-4">
             <span className="text-accent font-mono text-xl sm:text-2xl">
-              02.
+              04.
             </span>
             <span className="text-balance">Things I've Built</span>
             <span className="hidden sm:block flex-1 h-px bg-border ml-4" />
@@ -95,19 +99,24 @@ export function Projects() {
                       index % 2 === 1
                         ? "md:col-start-1 md:row-start-1 md:text-left"
                         : "md:text-right"
-                    } flex flex-col gap-3 sm:gap-4 -mt-20 md:mt-0 relative z-10 px-4 md:px-0`}
+                    } flex flex-col gap-3 sm:gap-4 -mt-10 md:mt-0 relative z-10 px-4 md:px-0`}
                   >
-                    <p className="text-accent font-mono text-xs sm:text-sm">
-                      Featured Project
-                    </p>
-                    <h3 className="text-xl sm:text-2xl font-bold text-foreground text-balance">
-                      {project.title}
-                    </h3>
-                    <div className="bg-card/95 md:bg-card p-4 sm:p-6 rounded shadow-lg backdrop-blur-sm">
-                      <p className="text-muted-foreground leading-relaxed text-sm sm:text-base">
-                        {project.description}
+                    <div className="bg-card/95 md:bg-transparent backdrop-blur-sm md:backdrop-blur-none p-4 sm:p-6 md:p-0 rounded md:rounded-none shadow-lg md:shadow-none">
+                      <p className="text-accent font-mono text-xs sm:text-sm mb-2 md:mb-3">
+                        Featured Project
                       </p>
+
+                      <h3 className="text-xl sm:text-2xl font-bold text-foreground text-balance mb-3 md:mb-4">
+                        {project.title}
+                      </h3>
+
+                      <div className="md:bg-card md:p-6 md:rounded md:shadow-lg">
+                        <p className="text-muted-foreground leading-relaxed text-sm sm:text-base">
+                          {project.description}
+                        </p>
+                      </div>
                     </div>
+
                     <div
                       className={`flex flex-wrap gap-2 sm:gap-3 font-mono text-xs sm:text-sm text-muted-foreground ${
                         index % 2 === 1 ? "md:justify-start" : "md:justify-end"
@@ -117,7 +126,12 @@ export function Projects() {
                         <span key={tech}>{tech}</span>
                       ))}
                     </div>
-                    <div className="flex gap-4">
+
+                    <div
+                      className={`flex items-center gap-4 ${
+                        index % 2 === 1 ? "md:justify-start" : "md:justify-end"
+                      }`}
+                    >
                       <motion.a
                         href={project.github}
                         target="_blank"
@@ -128,6 +142,7 @@ export function Projects() {
                       >
                         <Github className="w-5 h-5 sm:w-6 sm:h-6" />
                       </motion.a>
+
                       <motion.a
                         href={project.live}
                         target="_blank"
@@ -138,6 +153,14 @@ export function Projects() {
                       >
                         <ExternalLink className="w-5 h-5 sm:w-6 sm:h-6" />
                       </motion.a>
+
+                      <button
+                        onClick={() => setSelectedProject(project)}
+                        className="inline-flex items-center gap-1.5 text-accent hover:underline font-mono text-xs sm:text-sm touch-manipulation"
+                      >
+                        View Details
+                        <ArrowRight className="w-3.5 h-3.5" />
+                      </button>
                     </div>
                   </div>
                 </motion.div>
@@ -154,52 +177,55 @@ export function Projects() {
                 {otherProjects.map((project, index) => (
                   <motion.div
                     key={project.title}
-                    className="bg-card p-5 sm:p-6 rounded hover:translate-y-[-4px] transition-transform group border border-border"
+                    className="bg-card rounded hover:translate-y-[-4px] transition-transform group border border-border overflow-hidden"
                     initial={{ opacity: 0, y: 50 }}
                     animate={isInView ? { opacity: 1, y: 0 } : {}}
                     transition={{ delay: 0.6 + index * 0.1 }}
                   >
-                    <div className="flex justify-between items-start mb-4">
-                      <svg
-                        className="w-8 h-8 sm:w-10 sm:h-10 text-accent"
-                        fill="none"
-                        stroke="currentColor"
-                        viewBox="0 0 24 24"
-                      >
-                        <path
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                          strokeWidth={1.5}
-                          d="M3 7v10a2 2 0 002 2h14a2 2 0 002-2V9a2 2 0 00-2-2h-6l-2-2H5a2 2 0 00-2 2z"
-                        />
-                      </svg>
-                      <div className="flex gap-3">
-                        <a
-                          href={project.github}
-                          className="text-muted-foreground hover:text-accent transition-colors p-2 -m-2 touch-manipulation"
-                          aria-label="View on GitHub"
-                        >
-                          <Github className="w-5 h-5" />
-                        </a>
-                        <a
-                          href={project.live}
-                          className="text-muted-foreground hover:text-accent transition-colors p-2 -m-2 touch-manipulation"
-                          aria-label="View live site"
-                        >
-                          <ExternalLink className="w-5 h-5" />
-                        </a>
-                      </div>
+                    <div className="relative overflow-hidden">
+                      <img
+                        src={project.image || "/placeholder.svg"}
+                        alt={project.title}
+                        className="w-full h-36 sm:h-40 object-cover transition-transform duration-300 group-hover:scale-105"
+                      />
                     </div>
-                    <h4 className="text-lg sm:text-xl font-bold mb-3 text-foreground group-hover:text-accent transition-colors text-balance">
-                      {project.title}
-                    </h4>
-                    <p className="text-muted-foreground text-sm mb-4 leading-relaxed">
-                      {project.description}
-                    </p>
-                    <div className="flex flex-wrap gap-2 font-mono text-xs text-muted-foreground">
-                      {project.tech.map((tech) => (
-                        <span key={tech}>{tech}</span>
-                      ))}
+                    <div className="p-5 sm:p-6">
+                      <div className="flex justify-end items-start mb-4">
+                        <div className="flex gap-3">
+                          <a
+                            href={project.github}
+                            className="text-muted-foreground hover:text-accent transition-colors p-2 -m-2 touch-manipulation"
+                            aria-label="View on GitHub"
+                          >
+                            <Github className="w-5 h-5" />
+                          </a>
+                          <a
+                            href={project.live}
+                            className="text-muted-foreground hover:text-accent transition-colors p-2 -m-2 touch-manipulation"
+                            aria-label="View live site"
+                          >
+                            <ExternalLink className="w-5 h-5" />
+                          </a>
+                        </div>
+                      </div>
+                      <h4 className="text-lg sm:text-xl font-bold mb-3 text-foreground group-hover:text-accent transition-colors text-balance">
+                        {project.title}
+                      </h4>
+                      <p className="text-muted-foreground text-sm mb-4 leading-relaxed">
+                        {project.description}
+                      </p>
+                      <div className="flex flex-wrap gap-2 font-mono text-xs text-muted-foreground mb-4">
+                        {project.tech.map((tech) => (
+                          <span key={tech}>{tech}</span>
+                        ))}
+                      </div>
+                      <button
+                        onClick={() => setSelectedProject(project)}
+                        className="inline-flex items-center gap-1.5 text-accent hover:underline font-mono text-xs sm:text-sm touch-manipulation"
+                      >
+                        View Details
+                        <ArrowRight className="w-3.5 h-3.5" />
+                      </button>
                     </div>
                   </motion.div>
                 ))}
@@ -216,6 +242,11 @@ export function Projects() {
           )}
         </motion.div>
       </div>
+
+      <ProjectModal
+        project={selectedProject}
+        onClose={() => setSelectedProject(null)}
+      />
     </section>
   );
 }

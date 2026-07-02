@@ -4,6 +4,8 @@ import { useEffect, useState } from "react";
 import { Navigation } from "@/components/navigation";
 import { Hero } from "@/components/hero";
 import { About } from "@/components/about";
+import { Skills } from "@/components/skills";
+import { Experience } from "@/components/experience";
 import { CurrentlyWorking } from "@/components/currently-working";
 import { Projects } from "@/components/projects";
 import { Hackathons } from "@/components/hackathons";
@@ -29,6 +31,8 @@ export default function Home() {
       <main className="relative">
         <Hero />
         <About />
+        <Skills />
+        <Experience />
         <CurrentlyWorking />
         <Projects />
         <Hackathons />

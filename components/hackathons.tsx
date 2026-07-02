@@ -24,7 +24,7 @@ export function Hackathons() {
         >
           <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-3 sm:mb-4 flex items-center gap-3 sm:gap-4">
             <span className="text-accent font-mono text-xl sm:text-2xl">
-              03.
+              05.
             </span>
             <span className="text-balance">Hackathons & Competitions</span>
             <span className="hidden sm:block flex-1 h-px bg-border ml-4" />

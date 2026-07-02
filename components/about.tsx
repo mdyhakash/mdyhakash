@@ -3,7 +3,7 @@
 import { motion } from "framer-motion";
 import { useInView } from "framer-motion";
 import { useRef } from "react";
-import { about, skills } from "@/lib/data";
+import { about } from "@/lib/data";
 
 export function About() {
   const ref = useRef(null);
@@ -38,7 +38,11 @@ export function About() {
                 />
               ))}
               <p className="text-foreground font-medium">
-                Here are a few technologies I've been working with recently:
+                Want to see what I work with? Check out the{" "}
+                <a href="#skills" className="text-accent hover:underline">
+                  Skills
+                </a>{" "}
+                section below.
               </p>
             </div>
 
@@ -60,26 +64,6 @@ export function About() {
               </motion.div>
             </div>
           </div>
-
-          <motion.div
-            className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-2 sm:gap-3 mt-6 sm:mt-8"
-            initial={{ opacity: 0, y: 20 }}
-            animate={isInView ? { opacity: 1, y: 0 } : {}}
-            transition={{ delay: 0.3 }}
-          >
-            {skills.map((skill, index) => (
-              <motion.div
-                key={skill}
-                className="flex items-center gap-2 text-xs sm:text-sm font-mono text-muted-foreground"
-                initial={{ opacity: 0, x: -20 }}
-                animate={isInView ? { opacity: 1, x: 0 } : {}}
-                transition={{ delay: 0.4 + index * 0.05 }}
-              >
-                <span className="text-accent">▹</span>
-                <span className="text-balance">{skill}</span>
-              </motion.div>
-            ))}
-          </motion.div>
         </motion.div>
       </div>
     </section>

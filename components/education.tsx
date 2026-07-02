@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 import { useInView } from "framer-motion";
 import { useRef } from "react";
 import { GraduationCap, BookOpen } from "lucide-react";
-import { education, onlineCourses } from "@/lib/data";
+import { education } from "@/lib/data";
 
 export function Education() {
   const ref = useRef(null);
@@ -24,7 +24,7 @@ export function Education() {
         >
           <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-3 sm:mb-4 flex items-center gap-3 sm:gap-4">
             <span className="text-accent font-mono text-xl sm:text-2xl">
-              05.
+              07.
             </span>
             <span className="text-balance">Education</span>
             <span className="hidden sm:block flex-1 h-px bg-border ml-4" />
@@ -75,13 +75,13 @@ export function Education() {
             animate={isInView ? { opacity: 1, y: 0 } : {}}
             transition={{ delay: 0.4 }}
           >
-            <div className="flex items-center gap-2 sm:gap-3 mb-5 sm:mb-6">
+            {/* <div className="flex items-center gap-2 sm:gap-3 mb-5 sm:mb-6">
               <BookOpen className="w-5 h-5 sm:w-6 sm:h-6 text-accent" />
               <h3 className="text-xl sm:text-2xl font-bold text-foreground">
                 Continuous Learning
               </h3>
-            </div>
-            <div className="grid sm:grid-cols-2 gap-3 sm:gap-4">
+            </div> */}
+            {/* <div className="grid sm:grid-cols-2 gap-3 sm:gap-4">
               {onlineCourses.map((course, index) => (
                 <motion.div
                   key={course.title}
@@ -103,7 +103,7 @@ export function Education() {
                   </span>
                 </motion.div>
               ))}
-            </div>
+            </div> */}
           </motion.div>
         </motion.div>
       </div>

@@ -3,7 +3,8 @@
 import { motion } from "framer-motion";
 import { useInView } from "framer-motion";
 import { useRef } from "react";
-import { Award, Star, Code, Zap, Trophy } from "lucide-react";
+import { Award, Star, Code, Zap, Trophy, ExternalLink } from "lucide-react";
+import { toast } from "react-toastify";
 import { achievements, certifications } from "@/lib/data";
 
 const iconMap = {
@@ -32,7 +33,7 @@ export function Achievements() {
         >
           <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-3 sm:mb-4 flex items-center gap-3 sm:gap-4">
             <span className="text-accent font-mono text-xl sm:text-2xl">
-              04.
+              06.
             </span>
             Achievements & Recognition
             <span className="hidden sm:block flex-1 h-px bg-border ml-4" />
@@ -73,6 +74,24 @@ export function Achievements() {
                       <p className="text-xs sm:text-sm text-muted-foreground leading-relaxed">
                         {achievement.description}
                       </p>
+                      <a
+                        href={achievement.credentialUrl || "#"}
+                        target={achievement.credentialUrl ? "_blank" : undefined}
+                        rel="noopener noreferrer"
+                        onClick={(e) => {
+                          if (!achievement.credentialUrl) {
+                            e.preventDefault();
+                            toast.info(
+                              "Credential link coming soon! Please check back later.",
+                              { position: "bottom-right", autoClose: 4000 }
+                            );
+                          }
+                        }}
+                        className="inline-flex items-center gap-1.5 mt-3 text-accent hover:underline font-mono text-xs sm:text-sm touch-manipulation"
+                      >
+                        View Credentials
+                        <ExternalLink className="w-3.5 h-3.5" />
+                      </a>
                     </div>
                   </div>
                 </motion.div>
@@ -91,27 +110,54 @@ export function Achievements() {
             <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-4">
               {certifications.map((cert, index) => (
                 <motion.div
-                  key={cert}
-                  className="flex items-start gap-2 sm:gap-3 p-3 sm:p-4 bg-card rounded border border-border hover:border-accent transition-colors"
-                  initial={{ opacity: 0, x: -20 }}
-                  animate={isInView ? { opacity: 1, x: 0 } : {}}
-                  transition={{ delay: 0.5 + index * 0.05 }}
-                >
-                  <svg
-                    className="w-4 h-4 sm:w-5 sm:h-5 text-accent flex-shrink-0 mt-0.5"
-                    fill="currentColor"
-                    viewBox="0 0 20 20"
-                  >
-                    <path
-                      fillRule="evenodd"
-                      d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
-                      clipRule="evenodd"
-                    />
-                  </svg>
-                  <span className="text-xs sm:text-sm text-muted-foreground text-balance">
-                    {cert}
-                  </span>
-                </motion.div>
+  key={cert.title}
+  className="p-3 sm:p-4 bg-card rounded border border-border hover:border-accent transition-colors"
+  initial={{ opacity: 0, x: -20 }}
+  animate={isInView ? { opacity: 1, x: 0 } : {}}
+  transition={{ delay: 0.5 + index * 0.05 }}
+>
+  <div className="flex items-start gap-2 sm:gap-3">
+    <svg
+      className="w-4 h-4 sm:w-5 sm:h-5 text-accent flex-shrink-0 mt-0.5"
+      fill="currentColor"
+      viewBox="0 0 20 20"
+    >
+      <path
+        fillRule="evenodd"
+        d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+        clipRule="evenodd"
+      />
+    </svg>
+
+    <div className="flex-1">
+      <span className="text-xs sm:text-sm text-muted-foreground block">
+        {cert.title}
+      </span>
+
+      <a
+        href={cert.credentialUrl || "#"}
+        target={cert.credentialUrl ? "_blank" : undefined}
+        rel="noopener noreferrer"
+        onClick={(e) => {
+          if (!cert.credentialUrl) {
+            e.preventDefault();
+            toast.info(
+              "Credential link coming soon! Please check back later.",
+              {
+                position: "bottom-right",
+                autoClose: 4000,
+              }
+            );
+          }
+        }}
+        className="inline-flex items-center gap-1.5 mt-2 text-accent hover:underline font-mono text-xs sm:text-sm"
+      >
+        View Credentials
+        <ExternalLink className="w-3.5 h-3.5" />
+      </a>
+    </div>
+  </div>
+</motion.div>
               ))}
             </div>
           </motion.div>

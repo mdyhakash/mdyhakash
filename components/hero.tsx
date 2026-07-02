@@ -2,10 +2,24 @@
 
 import { motion } from "framer-motion";
 import { useEffect, useState } from "react";
-import { personalInfo } from "@/lib/data";
+import { Github, Linkedin, X, Facebook, Mail, Download } from "lucide-react";
+import { toast } from "react-toastify";
+import { personalInfo, socialLinks } from "@/lib/data";
+
+const iconMap = { Github, Linkedin, X, Facebook, Mail };
 
 export function Hero() {
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
+
+  const handleResumeClick = (e: React.MouseEvent) => {
+    if (!personalInfo.resumeUrl) {
+      e.preventDefault();
+      toast.info("Resume coming soon! Please check back later.", {
+        position: "bottom-right",
+        autoClose: 4000,
+      });
+    }
+  };
 
   useEffect(() => {
     const handleMouseMove = (e: MouseEvent) => {
@@ -51,17 +65,26 @@ export function Hero() {
           </motion.h1>
 
           <motion.h2
-            className="font-bold mb-4 sm:mb-6 text-muted-foreground"
-            style={{ fontSize: "clamp(2rem, 6vw, 2.1rem)" }}
+            className="font-bold mb-2 text-muted-foreground"
+            style={{ fontSize: "clamp(1.5rem, 4.5vw, 2.1rem)" }}
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.25 }}
+          >
+            {personalInfo.designation}
+          </motion.h2>
+
+          <motion.p
+            className="font-mono text-sm sm:text-base text-accent mb-4 sm:mb-6"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.3 }}
           >
             {personalInfo.tagline}
-          </motion.h2>
+          </motion.p>
 
           <motion.p
-            className="text-base sm:text-lg md:text-md text-muted-foreground max-w-2xl mb-8 sm:mb-12 leading-relaxed"
+            className="text-base sm:text-lg md:text-md text-muted-foreground max-w-2xl mb-8 sm:mb-10 leading-relaxed"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.4 }}
@@ -70,7 +93,7 @@ export function Hero() {
           </motion.p>
 
           <motion.div
-            className="flex flex-col sm:flex-row gap-3 sm:gap-4"
+            className="flex flex-col sm:flex-row gap-3 sm:gap-4 mb-6 sm:mb-8"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.5 }}
@@ -83,14 +106,53 @@ export function Hero() {
             >
               View My Work
             </motion.a>
-            <motion.a
+            {/* <motion.a
               href="#contact"
               className="inline-flex items-center justify-center px-6 sm:px-8 py-3 sm:py-4 bg-accent text-accent-foreground rounded font-mono text-sm sm:text-base hover:bg-accent/90 transition-colors touch-manipulation min-h-[44px]"
               whileHover={{ scale: 1.05, y: -2 }}
               whileTap={{ scale: 0.95 }}
             >
               Get In Touch
+            </motion.a> */}
+            <motion.a
+              href={personalInfo.resumeUrl || "#"}
+              onClick={handleResumeClick}
+              download={!!personalInfo.resumeUrl}
+              target={personalInfo.resumeUrl ? "_blank" : undefined}
+              rel="noopener noreferrer"
+              className="inline-flex items-center justify-center px-6 sm:px-8 py-3 sm:py-4 bg-accent text-accent-foreground rounded font-mono text-sm sm:text-base hover:bg-accent/90 transition-colors touch-manipulation min-h-[44px]"
+              whileHover={{ scale: 1.05, y: -2 }}
+              whileTap={{ scale: 0.95 }}
+            >
+              <Download className="w-4 h-4" />
+              Resume
             </motion.a>
+          </motion.div>
+
+          <motion.div
+            className="flex items-center gap-4 sm:gap-5"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.6 }}
+          >
+            {socialLinks.map((link) => {
+              const Icon = iconMap[link.icon as keyof typeof iconMap];
+              if (!Icon) return null;
+              return (
+                <motion.a
+                  key={link.label}
+                  href={link.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label={link.label}
+                  className="text-muted-foreground hover:text-accent transition-colors p-2 -m-2 touch-manipulation"
+                  whileHover={{ scale: 1.15, y: -2 }}
+                  whileTap={{ scale: 0.95 }}
+                >
+                  <Icon className="w-5 h-5 sm:w-6 sm:h-6" />
+                </motion.a>
+              );
+            })}
           </motion.div>
         </motion.div>
       </div>

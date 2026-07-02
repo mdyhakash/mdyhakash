@@ -3,11 +3,21 @@
 import { useRef, useState } from "react";
 import { motion } from "framer-motion";
 import { useInView } from "framer-motion";
-import { Send, Mail, Github, Linkedin, X } from "lucide-react";
+import {
+  Send,
+  Mail,
+  Github,
+  Linkedin,
+  X,
+  Facebook,
+  Phone,
+  MessageCircle,
+} from "lucide-react";
 import emailjs from "@emailjs/browser";
 import { toast } from "react-toastify";
+import { personalInfo, socialLinks } from "@/lib/data";
 
-const iconMap = { Github, Linkedin, X, Mail };
+const iconMap = { Github, Linkedin, X, Facebook, Mail };
 
 export function Contact() {
   const ref = useRef(null);
@@ -83,16 +93,76 @@ export function Contact() {
         >
           <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-3 sm:mb-4">
             <span className="text-accent font-mono text-xl sm:text-2xl">
-              06.
+              08.
             </span>{" "}
             Get In Touch
           </h2>
 
-          <p className="text-muted-foreground mb-8 sm:mb-12 max-w-2xl mx-auto text-base sm:text-lg leading-relaxed">
+          <p className="text-muted-foreground mb-8 sm:mb-10 max-w-2xl mx-auto text-base sm:text-lg leading-relaxed">
             I'm currently looking for new opportunities and my inbox is always
             open. Whether you have a question or just want to say hi, I'll try
             my best to get back to you!
           </p>
+
+          <motion.div
+            className="flex flex-col sm:flex-row flex-wrap items-center justify-center gap-3 sm:gap-4 mb-8 sm:mb-10"
+            initial={{ opacity: 0, y: 20 }}
+            animate={isInView ? { opacity: 1, y: 0 } : {}}
+            transition={{ delay: 0.1 }}
+          >
+            <a
+              href={`mailto:${personalInfo.email}`}
+              className="inline-flex items-center gap-2 px-4 sm:px-5 py-2.5 sm:py-3 bg-card border border-border rounded font-mono text-xs sm:text-sm text-foreground hover:border-accent hover:text-accent transition-colors touch-manipulation min-h-[44px]"
+            >
+              <Mail className="w-4 h-4" />
+              {personalInfo.email}
+            </a>
+            <a
+              href={`tel:${personalInfo.phone.replace(/\s+/g, "")}`}
+              className="inline-flex items-center gap-2 px-4 sm:px-5 py-2.5 sm:py-3 bg-card border border-border rounded font-mono text-xs sm:text-sm text-foreground hover:border-accent hover:text-accent transition-colors touch-manipulation min-h-[44px]"
+            >
+              <Phone className="w-4 h-4" />
+              {personalInfo.phone}
+            </a>
+            {personalInfo.whatsapp && (
+              <a
+                href={`https://wa.me/${personalInfo.whatsapp.replace(
+                  /[^\d]/g,
+                  ""
+                )}`}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 px-4 sm:px-5 py-2.5 sm:py-3 bg-card border border-border rounded font-mono text-xs sm:text-sm text-foreground hover:border-accent hover:text-accent transition-colors touch-manipulation min-h-[44px]"
+              >
+                <MessageCircle className="w-4 h-4" />
+                WhatsApp
+              </a>
+            )}
+          </motion.div>
+
+          <motion.div
+            className="flex items-center justify-center gap-5 sm:gap-6 mb-8 sm:mb-10"
+            initial={{ opacity: 0, y: 20 }}
+            animate={isInView ? { opacity: 1, y: 0 } : {}}
+            transition={{ delay: 0.15 }}
+          >
+            {socialLinks.map((link) => {
+              const Icon = iconMap[link.icon as keyof typeof iconMap];
+              if (!Icon) return null;
+              return (
+                <a
+                  key={link.label}
+                  href={link.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label={link.label}
+                  className="text-muted-foreground hover:text-accent transition-colors p-2 -m-2 touch-manipulation"
+                >
+                  <Icon className="w-5 h-5 sm:w-6 sm:h-6" />
+                </a>
+              );
+            })}
+          </motion.div>
 
           <motion.form
             onSubmit={handleSubmit}
@@ -175,13 +245,15 @@ export function Contact() {
             </div>
           </motion.form>
           <motion.div
-            className="text-center text-xs sm:text-sm text-muted-foreground font-mono"
+            className="text-center text-xs sm:text-sm text-muted-foreground font-mono border-t border-border pt-6 sm:pt-8"
             initial={{ opacity: 0 }}
             animate={isInView ? { opacity: 1 } : {}}
             transition={{ delay: 0.6 }}
           >
-            <p>Designed & Built by mdyhakash</p>
-            <p className="mt-2">© 2025 All rights reserved</p>
+            <p>Designed & Built by {personalInfo.name}</p>
+            <p className="mt-2">
+              © {new Date().getFullYear()} All rights reserved
+            </p>
           </motion.div>
         </motion.div>
       </div>
