@@ -9,6 +9,7 @@ import {
   Layers,
   AlertTriangle,
   Sparkles,
+  Lock,
 } from "lucide-react";
 import type { projects } from "@/lib/data";
 
@@ -77,6 +78,13 @@ export function ProjectModal({
                 alt={project.title}
                 className="w-full h-48 sm:h-64 object-cover"
               />
+              {/* Client project badge on image */}
+              {project.clientProject && (
+                <div className="absolute top-3 left-3 inline-flex items-center gap-1.5 px-2.5 py-1 bg-background/80 backdrop-blur border border-accent/50 text-accent rounded font-mono text-xs">
+                  <Lock className="w-3 h-3" />
+                  Client Project
+                </div>
+              )}
             </div>
 
             <div className="p-5 sm:p-8">
@@ -85,9 +93,9 @@ export function ProjectModal({
               </h2>
 
               <div className="flex flex-wrap gap-3 mb-6">
-                {project.live && project.live !== "#" && (
-                  <a
-                    href={project.live}
+                {project.live && project.live !== "#" ? (
+                  
+                  <a href={project.live}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="inline-flex items-center gap-2 px-4 py-2.5 bg-accent text-accent-foreground rounded font-mono text-xs sm:text-sm hover:bg-accent/90 transition-colors touch-manipulation min-h-[44px]"
@@ -95,18 +103,29 @@ export function ProjectModal({
                     <ExternalLink className="w-4 h-4" />
                     Live Project
                   </a>
-                )}
-                {project.github && project.github !== "#" && (
-                  <a
-                    href={project.github}
+                ) : project.clientProject ? (
+                  <span className="inline-flex items-center gap-2 px-4 py-2.5 border-2 border-border text-muted-foreground rounded font-mono text-xs sm:text-sm min-h-[44px] cursor-default">
+                    <Lock className="w-4 h-4" />
+                    Live – Maintained by Client
+                  </span>
+                ) : null}
+
+                {project.github && project.github !== "#" ? (
+                  
+                  <a href={project.github}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="inline-flex items-center gap-2 px-4 py-2.5 border-2 border-border text-foreground rounded font-mono text-xs sm:text-sm hover:border-accent hover:text-accent transition-colors touch-manipulation min-h-[44px]"
                   >
                     <Github className="w-4 h-4" />
-                    Client Repository
+                    GitHub Repository
                   </a>
-                )}
+                ) : project.clientProject ? (
+                  <span className="inline-flex items-center gap-2 px-4 py-2.5 border-2 border-border text-muted-foreground rounded font-mono text-xs sm:text-sm min-h-[44px] cursor-default">
+                    <Lock className="w-4 h-4" />
+                    Private Repository
+                  </span>
+                ) : null}
               </div>
 
               <section className="mb-6">

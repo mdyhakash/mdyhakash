@@ -102,6 +102,7 @@ export const skillCategories = [
 export const projects = [
   {
     slug: "eutropia-it-solutions",
+    clientProject: true,
     title: "Eutropia IT Solutions Corporate Website (Frontend)",
     description:
       "Eutropia IT Solutions is a modern, responsive corporate website built to showcase the company's services and expertise. Features include contact and inquiry forms with real time validation, a mobile first design optimized for all devices, and smooth client communication.",
@@ -125,7 +126,25 @@ export const projects = [
       "Add a CMS-backed blog and case studies section, integrate analytics dashboards for inquiry conversion tracking, and further optimize image loading with next/image for faster first paint.",
   },
   {
+    slug: "medicine-mart",
+    clientProject: true,
+    title: "Medicine Mart Features Update",
+    description:
+      "Developed and enhanced the Medicine Mart inventory management system with new features and workflow improvements. Implemented invoice management enhancements, purchase approval updates, product purchase history navigation, Excel export functionality, wishlist and request optimizations, and several UI refinements to improve efficiency and user experience.",
+    image: "/medicine-mart.png",
+    tech: ["HTML", "JavaScript", "Tailwind CSS", "Python", "Django"],
+    github: "#",
+    live: "",
+    featured: true,
+    category: "Web Apps",
+    challenges:
+      "Integrating new features into an existing Django application while preserving business logic was challenging. Maintaining data consistency across inventory, purchase requests, invoices, and reporting required careful backend validation and frontend synchronization.",
+    improvements:
+      "Add real-time inventory updates, barcode scanning, advanced filtering and reporting, role-based audit logs, automated low-stock notifications, and interactive analytics dashboards for inventory and purchasing.",
+  },
+  {
     slug: "adibas-ecommerce",
+    clientProject: false,
     title: "Adibas – E-commerce Website (Frontend)",
     description:
       "Adibas is a full featured e-commerce website with search and optimized product filtering, product sorting for easy navigation, and an add to cart feature for a streamlined shopping experience.",
@@ -139,22 +158,6 @@ export const projects = [
       "Building fast, accurate multi-attribute filtering (price, size, category) without a backend required structuring product data carefully and memoizing filter logic to keep the UI responsive as the catalog grew.",
     improvements:
       "Connect a real backend and database for persistent carts and orders, add user authentication, and introduce a wishlist and product review system.",
-  },
-  {
-    slug: "medicine-mart",
-    title: "Medicine Mart Features Update",
-    description:
-      "Developed and enhanced the Medicine Mart inventory management system with new features and workflow improvements. Implemented invoice management enhancements, purchase approval updates, product purchase history navigation, Excel export functionality, wishlist and request optimizations, and several UI refinements to improve efficiency and user experience.",
-    image: "/medicine-mart.png",
-    tech: ["HTML", "JavaScript", "Tailwind CSS", "Python", "Django"],
-    github: "https://github.com/mdyhakash/medicine-mart",
-    live: "",
-    featured: true,
-    category: "Web Apps",
-    challenges:
-      "Integrating new features into an existing Django application while preserving business logic was challenging. Maintaining data consistency across inventory, purchase requests, invoices, and reporting required careful backend validation and frontend synchronization.",
-    improvements:
-      "Add real-time inventory updates, barcode scanning, advanced filtering and reporting, role-based audit logs, automated low-stock notifications, and interactive analytics dashboards for inventory and purchasing.",
   },
   // {
   //   slug: "hackathon-valley",
