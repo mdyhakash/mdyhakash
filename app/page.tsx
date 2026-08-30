@@ -6,7 +6,7 @@ import { Hero } from "@/components/hero";
 import { About } from "@/components/about";
 import { Skills } from "@/components/skills";
 import { Experience } from "@/components/experience";
-import { CurrentlyWorking } from "@/components/currently-working";
+// import { CurrentlyWorking } from "@/components/currently-working";
 import { Projects } from "@/components/projects";
 import { Hackathons } from "@/components/hackathons";
 import { Achievements } from "@/components/achievements";
@@ -33,7 +33,7 @@ export default function Home() {
         <About />
         <Skills />
         <Experience />
-        <CurrentlyWorking />
+        {/* <CurrentlyWorking /> */}
         <Projects />
         <Hackathons />
         <Achievements />

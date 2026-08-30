@@ -42,7 +42,7 @@ export const socialLinks = [
 export const about = {
   paragraphs: [
     "Hey there! I'm Md Yasin Hossain Akash, but most people call me Akash. I'm a fullstack developer who loves turning ideas into functional applications.",
-    "Currently pursuing my BSc in Computer Science Engineering at UAP, I've competed in various hackathons, including winning Champion at INNOVATEX 2025. I've built over 40 projects, each teaching me something new about development and shipping quality software.",
+    "I recently graduated with a BSc in Computer Science and Engineering from the University of Asia Pacific. I've competed in various hackathons, including winning Champion at INNOVATEX 2025. I've built over 40 projects, each teaching me something new about development and shipping quality software.",
     "I prioritize writing clean, maintainable code and creating user-friendly interfaces. I'm always exploring new technologies to enhance my skills and stay current with industry trends.",
     "When I'm not coding, you'll find me playing Valorant, Minecraft, or FIFA, traveling, or binge-watching movies and series. I'm a huge fan of Harry Potter, Game of Thrones, and anime especially Demon Slayer.",
   ],
@@ -101,6 +101,33 @@ export const skillCategories = [
 
 export const projects = [
   {
+    slug: "gearup",
+    clientProject: false,
+    title: "GearUp - Sports & Outdoor Gear Rental Platform",
+    description:
+      "GearUp is a full-stack sports and outdoor gear rental platform that lets users browse, book, and pay for equipment online. Features include Google OAuth authentication, real time booking management, secure SSLCommerz payments, and a custom Tailwind v4 design system with a distinctive gear-tag visual identity.",
+    image: "/GearUp.png",
+    tech: [
+      "Next.js",
+      "TypeScript",
+      "Express.js",
+      "PostgreSQL",
+      "Prisma",
+      "Tailwind CSS v4",
+      "JWT",
+      "Passport.js",
+      "SSLCommerz",
+      "Zod",
+    ],
+    github: "https://github.com/mdyhakash/gearup-backend",
+    live: "https://gearup-frontend-seven.vercel.app/",
+    featured: true,
+    category: "Web Apps",
+    challenges:
+      "The trickiest issue was SSLCommerz integration working perfectly in Postman but failing from the frontend UI, which turned out to be a CORS origin mismatch between the deployed frontend and backend. Tracking that down required carefully comparing request headers between Postman and the browser before correcting the CORS configuration. Implementing Google OAuth with Passport.js while resolving cross-domain cookie issues also required building a custom Next.js rewrite proxy to keep auth sessions working reliably. Deploying the Express backend to Vercel involved further debugging of vercel.json configuration, callback URLs, and the build pipeline.",
+    improvements: "Add real time notifications for booking status updates.",
+  },
+  {
     slug: "eutropia-it-solutions",
     clientProject: true,
     title: "Eutropia IT Solutions Corporate Website (Frontend)",
@@ -142,6 +169,7 @@ export const projects = [
     improvements:
       "Add real-time inventory updates, barcode scanning, advanced filtering and reporting, role-based audit logs, automated low-stock notifications, and interactive analytics dashboards for inventory and purchasing.",
   },
+
   {
     slug: "adibas-ecommerce",
     clientProject: false,
@@ -176,6 +204,29 @@ export const projects = [
   //     "Add real-time result updates via WebSockets, organizer dashboards for managing submissions, and email notifications for registration and results.",
   // },
   {
+    slug: "double-layer-security-iomt",
+    clientProject: false,
+    title: "Design and Analysis of Smart Healthcare System",
+    description:
+      "A collaborative research project developed by a 3-member team to design a privacy-preserving security system for Internet of Medical Things (IoMT) networks. The system combines homomorphic encryption and machine learning to enable secure healthcare data processing while protecting patient privacy and supporting intelligent smart healthcare applications.",
+    image: "/iot-security.png",
+    tech: [
+      "IoMT",
+      "Cryptography",
+      "Homomorphic Encryption",
+      "Machine Learning",
+      "Networking",
+    ],
+    github: "https://github.com/mdyhakash/double-layer-security-system",
+    live: "#",
+    featured: false,
+    category: "Research",
+    challenges:
+      "The study has some limitations. The encrypted pipeline currently supports linear machine learning models, while deep non-linear models were not implemented due to the computational complexity of encrypted activation functions. The Paillier encryption scheme can introduce higher processing overhead for high-frequency data. Model training is performed on plaintext data, with encryption applied during inference. The system was evaluated in software rather than on physical IoMT devices, and some datasets were relatively small, particularly for the severity prediction task.",
+    improvements:
+      "Future work includes supporting encrypted deep learning using CKKS with polynomial approximations of activation functions, deploying the system on real edge hardware such as Raspberry Pi to evaluate latency and energy consumption, and integrating federated learning so models can be trained across multiple devices without sharing raw healthcare data. Future research will also explore larger clinical datasets and multimodal healthcare signals, such as combining voice with movement data, to improve accuracy and move the system closer to a fully deployable, intelligent, and privacy-preserving smart healthcare platform.",
+  },
+  {
     slug: "quickdrop",
     title: "QuickDrop",
     description:
@@ -191,22 +242,7 @@ export const projects = [
     improvements:
       "Add cross-device sync with an account system, tagging and search for saved snippets, and a browser extension for one-click capture.",
   },
-  {
-    slug: "css-layout-generator",
-    title: "CSS Layout Generator",
-    description:
-      "CSS Layout Generator is a visual, interactive tool that simplifies building responsive CSS layouts. Ideal for frontend developers, designers, or anyone learning CSS, it allows quick prototyping, live previews, and clean code export without writing every line manually.",
-    image: "/css-layout-generator.png",
-    tech: ["Next.js", "React", "Tailwind CSS", "Framer Motion"],
-    github: "https://github.com/mdyhakash/css-layout-generator",
-    live: "https://css-layout-generator.vercel.app/",
-    featured: false,
-    category: "Tools",
-    challenges:
-      "Translating live drag-and-drop layout changes into clean, human-readable CSS output in real time meant writing a custom code generator instead of relying on a simple template.",
-    improvements:
-      "Support Grid and Flexbox side by side with a toggle, add exportable presets, and let users save and share layouts via a shareable link.",
-  },
+
   {
     slug: "pawfinder",
     title: "Pawfinder",
@@ -404,7 +440,7 @@ export const education = [
     school: "University of Asia Pacific",
     location: "Dhaka, Bangladesh",
     period: "2022 - 2026",
-    gpa: "3.4/4.0",
+    gpa: "3.47/4.00",
   },
   {
     degree: "Higher Secondary Certificate (HSC) in Science",
@@ -445,16 +481,16 @@ export const education = [
 // },
 //];
 
-export const currentlyWorkingOn = [
-  {
-    title:
-      "Double Layer Security System in IoMT Network for Smart Healthcare System",
-    description:
-      "Developing an advanced double layer security system for IoT networks specifically designed for smart healthcare applications.",
-    status: "In Progress",
-    progress: 90,
-    tech: ["Cryptography", "Machine Learning", "Networking", " Security"],
-    startDate: "2025",
-    expectedCompletion: "2026",
-  },
-];
+// export const currentlyWorkingOn = [
+//   {
+//     title:
+//       "Double Layer Security System in IoMT Network for Smart Healthcare System",
+//     description:
+//       "Developing an advanced double layer security system for IoT networks specifically designed for smart healthcare applications.",
+//     status: "In Progress",
+//     progress: 100,
+//     tech: ["Cryptography", "Machine Learning", "Networking", " Security"],
+//     startDate: "2025",
+//     expectedCompletion: "2026",
+//   },
+// ];

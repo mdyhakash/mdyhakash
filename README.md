@@ -6,12 +6,11 @@
 
 <br/>
 
-<div align="center">
+<div align="center">    
 
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://linkedin.com/in/mdyhakash)
 [![GitHub](https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white)](https://github.com/mdyhakash)
 [![Facebook](https://img.shields.io/badge/Facebook-1877F2?style=for-the-badge&logo=facebook&logoColor=white)](https://facebook.com/mdyhakash)
-[![Instagram](https://img.shields.io/badge/Instagram-E4405F?style=for-the-badge&logo=instagram&logoColor=white)](https://instagram.com/mdyhakash)
 [![X](https://img.shields.io/badge/X-000000?style=for-the-badge&logo=x&logoColor=white)](https://x.com/mdyhakash)
 [![Email](https://img.shields.io/badge/Gmail-EA4335?style=for-the-badge&logo=gmail&logoColor=white)](mailto:mdyhakash@gmail.com)
 
@@ -21,27 +20,30 @@
 
 ## 👨‍💻 About Me
 
-> *Passionate and driven Full-Stack Web Developer from Bangladesh — building modern, scalable web experiences with React, Next.js, and Node.js.*
+> _Passionate and driven Full-Stack Web Developer from Bangladesh — building modern, scalable web experiences with React, Next.js, and Node.js._
 
-- 🔭 Currently working on **Express.JS** and **NextJS** projects
-- 🌱 Currently learning **Node.js** and **Express**
-- 💬 Ask me about **ReactJS**, **NextJS**, **Django**
-- 📍 Based in **Dhaka, Bangladesh**
+I'm a Computer Science graduate from the **University of Asia Pacific** (Dept. of CSE). I enjoy learning by building — most of what I know comes from hands-on personal and academic projects rather than just theory. My core stack is **PostgreSQL, Express.js, TypeScript, and Next.js**, and I'm always exploring new tools to sharpen that stack further.
+
+- 🔭 Currently working on Express.JS and NextJS projects
+- 🌱 Currently exploring advanced backend architecture patterns
+- 💬 Ask me about **Next.js**, **Express.js**, **PostgreSQL/Prisma**
+- 📍 Based in Dhaka, Bangladesh
 - 📫 Reach me at **mdyhakash@gmail.com**
 
 ---
 
 ## 🏆 Achievements
 
-- 🥇 **Champion** — Software Showcase · **UAP SNH Club** · [INNOVATEX 2025](https://www.linkedin.com/posts/siratulislam_hackathon-softwareshowcase-teamwork-activity-7327319864807751680-Y3eC) *(May 2025)*
-- 🥈 **1st Runners-Up** — Hackathon · **UAP SNH Club** · [INNOVATEX 2025](https://www.linkedin.com/posts/siratulislam_hackathon-softwareshowcase-teamwork-activity-7327319864807751680-Y3eC) *(May 2025)*
-- 🎖️ **4th Place** — Hackathon · **MIST Innovation Club** · [NEOFETCH Hackathon](https://www.linkedin.com/posts/sultana-rupa-3662a3318_we-the-mavericks-participated-in-the-mist-activity-7304528490811269121-u0cB) *(March 2025)*
+- 🥇 **Champion** — Software Showcase · **UAP SNH Club** · [INNOVATEX 2025](https://www.linkedin.com/posts/siratulislam_hackathon-softwareshowcase-teamwork-activity-7327319864807751680-Y3eC) _(May 2025)_
+- 🥈 **1st Runners-Up** — Hackathon · **UAP SNH Club** · [INNOVATEX 2025](https://www.linkedin.com/posts/siratulislam_hackathon-softwareshowcase-teamwork-activity-7327319864807751680-Y3eC) _(May 2025)_
+- 🎖️ **4th Place** — Hackathon · **MIST Innovation Club** · [NEOFETCH Hackathon](https://www.linkedin.com/posts/sultana-rupa-3662a3318_we-the-mavericks-participated-in-the-mist-activity-7304528490811269121-u0cB) _(March 2025)_
 
 ---
 
 ## 🛠️ Tech Stack
 
 #### Frontend
+
 ![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=flat-square&logo=html5&logoColor=white)
 ![CSS3](https://img.shields.io/badge/CSS3-1572B6?style=flat-square&logo=css3&logoColor=white)
 ![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=flat-square&logo=javascript&logoColor=black)
@@ -56,6 +58,7 @@
 ![Markdown](https://img.shields.io/badge/Markdown-000000?style=flat-square&logo=markdown&logoColor=white)
 
 #### Backend & Database
+
 ![Node.js](https://img.shields.io/badge/Node.js-339933?style=flat-square&logo=node.js&logoColor=white)
 ![Express.js](https://img.shields.io/badge/Express.js-000000?style=flat-square&logo=express&logoColor=white)
 ![Python](https://img.shields.io/badge/Python-3776AB?style=flat-square&logo=python&logoColor=white)
@@ -68,7 +71,6 @@
 ![MySQL](https://img.shields.io/badge/MySQL-4479A1?style=flat-square&logo=mysql&logoColor=white)
 ![PostgreSQL](https://img.shields.io/badge/PostgreSQL-4169E1?style=flat-square&logo=postgresql&logoColor=white)
 ![Prisma](https://img.shields.io/badge/Prisma-2D3748?style=flat-square&logo=prisma&logoColor=white)
-
 
 ---
 

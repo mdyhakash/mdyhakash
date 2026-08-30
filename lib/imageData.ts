@@ -16,6 +16,42 @@ export interface GalleryImage {
 export const galleryImages: GalleryImage[] = [
   {
     id: uuidv4(),
+    title: "Graduated with a BSc in Computer Science & Engineering",
+    description:
+      "Alhamdulillah! All thanks to Almighty Allah. Officially graduated with a Bachelor of Science in Computer Science & Engineering (CSE) from the University of Asia Pacific (UAP). Grateful to my family, teachers, friends, and everyone who supported me throughout this journey. Looking forward to the next chapter and new opportunities in software engineering.",
+    location: "University of Asia Pacific, Bangladesh",
+    date: "July 2026",
+    orientation: "",
+    image: {
+      local: "/images/graduation1.jpg",
+    },
+  },
+  {
+    id: uuidv4(),
+    title: "Graduated with a BSc in Computer Science & Engineering",
+    description:
+      "Alhamdulillah! All thanks to Almighty Allah. Officially graduated with a Bachelor of Science in Computer Science & Engineering (CSE) from the University of Asia Pacific (UAP). Grateful to my family, teachers, friends, and everyone who supported me throughout this journey. Looking forward to the next chapter and new opportunities in software engineering.",
+    location: "University of Asia Pacific, Bangladesh",
+    date: "July 2026",
+    orientation: "",
+    image: {
+      local: "/images/graduation2.jpg",
+    },
+  },
+  {
+    id: uuidv4(),
+    title: "Instructor – DevFront",
+    description:
+      "Grateful to receive this token of appreciation from the Software & Hardware Club (SnH), UAP for contributing as an instructor at DevFront.",
+    location: "University of Asia Pacific, Bangladesh",
+    date: "2026",
+    orientation: "landscape",
+    image: {
+      local: "/images/devfrontinstructor.JPG",
+    },
+  },
+  {
+    id: uuidv4(),
     title: "Runners up Innovatex Hackathon",
     description: "",
     location: "University of Asia Pacific, Bangladesh",
