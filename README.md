@@ -74,15 +74,16 @@ I'm a Computer Science graduate from the **University of Asia Pacific** (Dept. o
 
 ---
 
-## 📈 GitHub Stats
+## GitHub Statistics
 
-<div align="center">
+<p align="center">
 
-![mdyhakash's Stats](https://github-readme-stats.vercel.app/api?username=mdyhakash&theme=tokyonight&show_icons=true&hide_border=true&count_private=true)
+<img src="https://yourinsights.vercel.app/api/insight?username=mdyhakash&theme=github_dark&graph=false&languages=true&streak=true&stats=true&header=false&summary=false&profile=false&borderColor=302b63" alt="GitHub Insights"/>
+</p>
 
-</div>
+<br>
 
-<div align="center">
+<!-- <div align="center">
 
 [![GitHub Streak](https://streak-stats.demolab.com?user=mdyhakash&theme=tokyonight&hide_border=true)](https://git.io/streak-stats)
 
@@ -98,7 +99,7 @@ I'm a Computer Science graduate from the **University of Asia Pacific** (Dept. o
 
 [![Activity Graph](https://github-readme-activity-graph.vercel.app/graph?username=mdyhakash&theme=tokyo-night&hide_border=true)](https://github.com/mdyhakash)
 
-</div>
+</div> -->
 
 ### 🔝 Top Contributed Repos
 
