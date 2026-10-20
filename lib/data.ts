@@ -403,6 +403,23 @@ export const certifications = [
 ];
 export const experience = [
   {
+    role: "Software Engineer (Frontend)",
+    company: "Soft Valley",
+    location: "Dhaka, Bangladesh (Onsite)",
+    period: "2026 – Present",
+    type: "Full-time",
+    description:
+      "Working as a full-time frontend software engineer developing responsive, modern, and high-performance web applications. Collaborating on-site with cross-functional teams to build intuitive user interfaces, optimize web performance, and integrate robust client-side architecture.",
+    tech: [
+      "Next.js",
+      "React.js",
+      "TypeScript",
+      "Tailwind CSS",
+      "Redux Toolkit",
+      "REST APIs",
+    ],
+  },
+  {
     role: "Junior Software Engineer (Industrial Trainee)",
     company: "Eutropia IT Solution",
     location: "Dhaka, Bangladesh",

@@ -43,7 +43,11 @@ export function Experience() {
                 animate={isInView ? { opacity: 1, x: 0 } : {}}
                 transition={{ delay: index * 0.15 }}
               >
-                <span className="absolute -left-[9px] top-1.5 w-4 h-4 rounded-full bg-accent border-4 border-background" />
+                <span className="absolute flex items-center justify-center -left-[9px] top-1.5 w-4 h-4 rounded-full bg-accent border-4 border-background">
+                  {job.period.includes("Present") && (
+                    <span className="absolute -inset-1 rounded-full bg-accent/40 animate-ping" />
+                  )}
+                </span>
 
                 <div className="bg-card p-5 sm:p-6 rounded border border-border hover:border-accent transition-colors">
                   <div className="flex flex-wrap items-start justify-between gap-2 mb-2">
