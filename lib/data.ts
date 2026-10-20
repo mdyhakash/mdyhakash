@@ -403,9 +403,9 @@ export const certifications = [
 ];
 export const experience = [
   {
-    role: "Software Engineer (Frontend)",
+    role: "Software Engineer",
     company: "Soft Valley",
-    location: "Dhaka, Bangladesh (Onsite)",
+    location: "Banani, Dhaka, Bangladesh (Onsite)",
     period: "2026 – Present",
     type: "Full-time",
     description:
@@ -415,7 +415,6 @@ export const experience = [
       "React.js",
       "TypeScript",
       "Tailwind CSS",
-      "Redux Toolkit",
       "REST APIs",
     ],
   },
