@@ -199,4 +199,10 @@ export const community = [
     date: "",
     desc: "Taught juniors about hackathons, web development, teamwork and building real projects, drawing on my experience in multiple national hackathons. Received a token of appreciation from the club.",
   },
+  {
+    company: "Kiddo Devs",
+    role: "Instructor",
+    date: "",
+    desc: "A community started by my hackathon team on our own initiative. We taught UAP students about hackathons, web development, teamwork and building real projects, based on what we learned competing in national hackathons.",
+  },
 ];
