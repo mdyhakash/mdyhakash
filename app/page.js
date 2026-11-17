@@ -4,7 +4,7 @@ import ProjectRow from "@/components/ProjectRow";
 import SkillsTable from "@/components/SkillsTable";
 import ExperienceRow from "@/components/ExperienceRow";
 import AwardRow from "@/components/AwardRow";
-import { profile, projects, skills, learning, experience, education, awards } from "./data";
+import { profile, projects, publications, skills, learning, experience, education, awards } from "./data";
 
 export default function Home() {
   return (
@@ -16,6 +16,10 @@ export default function Home() {
           {projects.map((p) => <ProjectRow key={p.name} {...p} />)}
         </Section>
 
+        <Section title="Publications">
+          {publications.map((p) => <ProjectRow key={p.name} {...p} />)}
+        </Section>
+
         <Section title="Skills">
           <SkillsTable skills={skills} />
         </Section>
@@ -25,7 +29,9 @@ export default function Home() {
         </Section>
 
         <Section title="Work Experience">
-          {experience.map((e) => <ExperienceRow key={e.company} {...e} />)}
+          {experience.map((e) => (
+            <ExperienceRow key={`${e.company}-${e.date}`} {...e} />
+          ))}
         </Section>
 
         <Section title="Education">

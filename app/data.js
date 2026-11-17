@@ -48,6 +48,21 @@ export const projects = [
     tech: "Django, Tailwind CSS",
     links: [],
   },
+  {
+    name: "Design and Analysis of Smart Healthcare System",
+    desc: "Thesis project built by a 3-member team: a privacy-preserving security system for Internet of Medical Things (IoMT) networks. It combines homomorphic encryption (Paillier) with machine learning so healthcare data can be processed securely while protecting patient privacy.",
+    tech: "IoMT, Cryptography, Homomorphic Encryption, Machine Learning, Networking",
+    links: [],
+  },
+];
+
+export const publications = [
+  {
+    name: "IoT in Healthcare Systems Using Machine Learning, Deep Learning, and Cryptosystems: Threats and Future Research Directions",
+    desc: "Accepted for publication in Springer LNNS at the 7th Doctoral Symposium on Computational Intelligence (DoSCI 2026), placing in the top 20% of submissions. To be indexed in Scopus and Web of Science.",
+    tech: "IoT, Healthcare, Machine Learning, Deep Learning, Cryptosystems",
+    links: [],
+  },
 ];
 
 export const skills = [
@@ -94,20 +109,26 @@ export const experience = [
   {
     company: "Soft Valley",
     role: "Software Engineer",
-    date: "Present",
+    date: "2026 – Present",
     desc: "Delivered 2 projects end to end and currently working on 2 more.",
   },
   {
     company: "Eutropia IT Solution",
     role: "Full-Stack Developer",
     date: "Feb 2026 – Jun 2026",
-    desc: "Built the corporate website and core Medicine Mart e-commerce features, working with design and backend teams.",
+    desc: "Built the corporate website and core Medicine Mart e-commerce features across the Next.js frontend and Django backend, and upgraded other existing projects, working with design and backend teams.",
   },
   {
     company: "Datavro BD",
     role: "Full-Stack Developer (Frontend Focused)",
     date: "Jan 2026 – Feb 2026",
     desc: "Built React components and turned design mock-ups into working interfaces alongside senior developers.",
+  },
+  {
+    company: "Eutropia IT Solution",
+    role: "Frontend Developer (Learning & Project-Based)",
+    date: "2023 – 2025",
+    desc: "Learned frontend development hands-on while building UI for real projects on a project basis.",
   },
 ];
 
@@ -131,21 +152,25 @@ export const education = [
 
 export const awards = [
   {
-    title: "Champion, Innovatex 2025",
-    sub: "National Hackathon",
+    title: "Champion, Software Showcase",
+    sub: "Innovatex 2025, National Hackathon",
     year: "2025",
   },
   {
-    title: "Runner-up, Innovatex 2025",
-    sub: "National Hackathon, separate category",
+    title: "Runner-up, Hackathon",
+    sub: "Innovatex 2025, National Hackathon",
     year: "2025",
   },
-  { title: "Winner, Software Showcase", sub: "", year: "" },
-  { title: "4th Place, MIST Hackathon", sub: "", year: "" },
+  { title: "4th Place, MIST Hackathon", sub: "MIST Inventious", year: "2025" },
+  {
+    title: "Harvard HSIL Hackathon",
+    sub: "International Hackathon",
+    year: "2025",
+  },
   {
     title:
-      "Participated in 7+ national hackathons and programming competitions",
+      "Participated in 9+ national hackathons and programming competitions",
     sub: "",
-    year: "",
+    year: "2022-2025",
   },
 ];
