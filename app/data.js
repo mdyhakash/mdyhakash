@@ -1,7 +1,8 @@
 export const profile = {
   name: "Md Yasin Hossain Akash",
   bio: "Software Engineer at Soft Valley, based in Dhaka. I build full-stack products with Next.js, Express, TypeScript and Prisma, covering auth, payments and role-based access.",
-  highlight: "Currently going deeper into system design, Docker, RAG and LLM integration.",
+  highlight:
+    "Currently going deeper into system design, Docker, RAG and LLM integration.",
   avatar: "", // set to "/avatar.jpg" after I add my photo to /public; empty shows a placeholder icon
   links: {
     github: "https://github.com/mdyhakash",
@@ -18,8 +19,14 @@ export const projects = [
     tech: "Next.js, TypeScript, Express, Prisma, PostgreSQL, Redis, bKash",
     links: [
       { label: "Live", href: "https://nesthive-frontend.vercel.app/" },
-      { label: "Frontend", href: "https://github.com/mdyhakash/nesthive-frontend" },
-      { label: "Backend", href: "https://github.com/mdyhakash/nesthive-backend" },
+      {
+        label: "Frontend",
+        href: "https://github.com/mdyhakash/nesthive-frontend",
+      },
+      {
+        label: "Backend",
+        href: "https://github.com/mdyhakash/nesthive-backend",
+      },
     ],
   },
   {
@@ -28,32 +35,59 @@ export const projects = [
     tech: "Next.js, Express, TypeScript, Prisma, PostgreSQL, SSLCommerz",
     links: [
       { label: "Live", href: "https://gearup-frontend-seven.vercel.app/" },
-      { label: "Frontend", href: "https://github.com/mdyhakash/gearup-frontend" },
+      {
+        label: "Frontend",
+        href: "https://github.com/mdyhakash/gearup-frontend",
+      },
       { label: "Backend", href: "https://github.com/mdyhakash/gearup-backend" },
     ],
   },
   {
     name: "Medicine Mart",
     desc: "Online medicine ordering platform. Built the product catalog, search, category filtering, cart and checkout flow during my role at Eutropia IT Solution.",
-    tech: "Next.js, React, Tailwind CSS",
+    tech: "Django, Tailwind CSS",
     links: [],
   },
 ];
 
 export const skills = [
   { label: "Languages", items: "JavaScript, TypeScript, Python, Java, C, C++" },
-  { label: "Frontend", items: "React.js, Next.js, React Router, React Query, React Hook Form, Tailwind CSS, Bootstrap, shadcn/ui, Radix UI, HTML5, CSS3, React Native" },
-  { label: "Backend / API", items: "Node.js, Express.js, Django, Django REST Framework, REST APIs, JWT, Google OAuth" },
+  {
+    label: "Frontend",
+    items:
+      "React.js, Next.js, React Router, React Query, React Hook Form, Tailwind CSS, Bootstrap, shadcn/ui, Radix UI, HTML5, CSS3, React Native",
+  },
+  {
+    label: "Backend / API",
+    items:
+      "Node.js, Express.js, Django, Django REST Framework, REST APIs, JWT, Google OAuth",
+  },
   { label: "Database", items: "PostgreSQL, MySQL, MongoDB, Prisma" },
-  { label: "Tools", items: "Git, GitHub, Vercel, Postman, SSLCommerz, Markdown" },
+  {
+    label: "Tools",
+    items: "Git, GitHub, Vercel, Postman, SSLCommerz, Markdown",
+  },
   { label: "Languages (spoken)", items: "Bangla (native), English (fluent)" },
 ];
 
 export const learning = [
-  { label: "System Design", items: "Scalability, caching, load balancing, database design, API design, trade-offs" },
-  { label: "Docker", items: "Containerizing apps, multi-service setups with Docker Compose" },
-  { label: "RAG Systems", items: "Embeddings, vector search, retrieval pipelines" },
-  { label: "LLM / AI Integration", items: "Building AI features into real apps, prompting, tool use" },
+  {
+    label: "System Design",
+    items:
+      "Scalability, caching, load balancing, database design, API design, trade-offs",
+  },
+  {
+    label: "Docker",
+    items: "Containerizing apps, multi-service setups with Docker Compose",
+  },
+  {
+    label: "RAG Systems",
+    items: "Embeddings, vector search, retrieval pipelines",
+  },
+  {
+    label: "LLM / AI Integration",
+    items: "Building AI features into real apps, prompting, tool use",
+  },
 ];
 
 export const experience = [
@@ -78,13 +112,40 @@ export const experience = [
 ];
 
 export const education = [
-  { title: "University of Asia Pacific", sub: "B.Sc. in Computer Science & Engineering, CGPA 3.47 / 4.00", year: "" },
+  {
+    title: "University of Asia Pacific",
+    sub: "B.Sc. in Computer Science & Engineering, CGPA 3.47 / 4.00",
+    year: "",
+  },
+  {
+    title: "BCIC College",
+    sub: "HSC, GPA 5.00 / 5.00",
+    year: "",
+  },
+  {
+    title: "Darussalam Govt. Secondary School",
+    sub: "SSC, GPA 5.00 / 5.00",
+    year: "",
+  },
 ];
 
 export const awards = [
-  { title: "Champion, Innovatex 2025", sub: "National Hackathon", year: "2025" },
-  { title: "Runner-up, Innovatex 2025", sub: "National Hackathon, separate category", year: "2025" },
+  {
+    title: "Champion, Innovatex 2025",
+    sub: "National Hackathon",
+    year: "2025",
+  },
+  {
+    title: "Runner-up, Innovatex 2025",
+    sub: "National Hackathon, separate category",
+    year: "2025",
+  },
   { title: "Winner, Software Showcase", sub: "", year: "" },
   { title: "4th Place, MIST Hackathon", sub: "", year: "" },
-  { title: "Participated in 7+ national hackathons and programming competitions", sub: "", year: "" },
+  {
+    title:
+      "Participated in 7+ national hackathons and programming competitions",
+    sub: "",
+    year: "",
+  },
 ];
