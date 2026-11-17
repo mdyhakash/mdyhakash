@@ -1,7 +1,7 @@
 export default function Section({ title, children }) {
   return (
     <section className="mt-16">
-      <h2 className="mb-5 text-[11px] font-semibold uppercase tracking-[0.15em] text-emerald-600">
+      <h2 className="mb-5 font-mono text-[11px] font-semibold uppercase tracking-[0.15em] text-emerald-600">
         {title}
       </h2>
       {children}

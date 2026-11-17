@@ -6,7 +6,7 @@ export default function ExperienceRow({ company, role, date, desc }) {
           <span className="font-semibold text-gray-900">{company}</span>
           <span className="ml-2 text-xs text-emerald-700">{role}</span>
         </p>
-        <span className="shrink-0 text-xs text-gray-400">{date}</span>
+        <span className="shrink-0 font-mono text-xs text-gray-400">{date}</span>
       </div>
       {desc && <p className="mt-1.5 max-w-xl text-sm">{desc}</p>}
     </div>
