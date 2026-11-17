@@ -11,8 +11,17 @@ export const profile = {
   },
 };
 
-// TODO (me): add Soft Valley projects here (2 finished, 2 in progress) once I send names and descriptions.
 export const projects = [
+  {
+    name: "Nesthive",
+    desc: "Housing rental and roommate-matching platform for Dhaka with Tenant, Owner, Admin and Manager roles. Covers verified listings with owner KYC, viewings, roommate compatibility matching, digital leases, bKash rent payments, utility bill splitting and maintenance tickets, backed by a 60+ endpoint REST API.",
+    tech: "Next.js, TypeScript, Express, Prisma, PostgreSQL, Redis, bKash",
+    links: [
+      { label: "Live", href: "https://nesthive-frontend.vercel.app/" },
+      { label: "Frontend", href: "https://github.com/mdyhakash/nesthive-frontend" },
+      { label: "Backend", href: "https://github.com/mdyhakash/nesthive-backend" },
+    ],
+  },
   {
     name: "GearUp",
     desc: "Gear rental marketplace where users list, browse and rent outdoor and event gear, with role-based dashboards for customers, providers and admins.",
@@ -29,9 +38,6 @@ export const projects = [
     tech: "Next.js, React, Tailwind CSS",
     links: [],
   },
-  { name: "GameGhor", desc: "Gaming cafe management app.", tech: "", links: [] },
-  { name: "Dhar Sodh (ধারশোধ)", desc: "Personal loan tracker app.", tech: "", links: [] },
-  { name: "Prisma Press", desc: "Editorial and blogging platform.", tech: "", links: [] },
 ];
 
 export const skills = [
