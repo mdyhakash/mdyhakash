@@ -52,7 +52,12 @@ export const projects = [
     name: "Design and Analysis of Smart Healthcare System",
     desc: "Thesis project built by a 3-member team: a privacy-preserving security system for Internet of Medical Things (IoMT) networks. It combines homomorphic encryption (Paillier) with machine learning so healthcare data can be processed securely while protecting patient privacy.",
     tech: "IoMT, Cryptography, Homomorphic Encryption, Machine Learning, Networking",
-    links: [],
+    links: [
+      {
+        label: "Github",
+        href: "https://github.com/mdyhakash/double-layer-security-system",
+      },
+    ],
   },
 ];
 
@@ -152,6 +157,17 @@ export const education = [
 
 export const awards = [
   {
+    title: "Dean's List, Spring 2024",
+    sub: "University of Asia Pacific, Department of CSE",
+    year: "2024",
+  },
+  {
+    title: "Dean's List, Fall 2024",
+    sub: "University of Asia Pacific, Department of CSE",
+    year: "2025",
+  },
+
+  {
     title: "Champion, Software Showcase",
     sub: "Innovatex 2025, National Hackathon",
     year: "2025",
@@ -161,6 +177,7 @@ export const awards = [
     sub: "Innovatex 2025, National Hackathon",
     year: "2025",
   },
+
   { title: "4th Place, MIST Hackathon", sub: "MIST Inventious", year: "2025" },
   {
     title: "Harvard HSIL Hackathon",
