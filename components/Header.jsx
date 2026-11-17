@@ -1,5 +1,5 @@
 import { profile } from "@/app/data";
-import myPhoto from "@/public/myphoto.jpg";
+import myPhoto from "@/public/myphoto.webp";
 import Image from "next/image";
 import { FaGithub, FaLinkedinIn } from "react-icons/fa";
 import { MdDescription, MdEmail } from "react-icons/md";
@@ -15,7 +15,6 @@ export default function Header() {
         alt={name}
         width={224}
         height={224}
-       
         className="h-48 w-48 shrink-0 rounded-full bg-gray-200 object-cover sm:h-56 sm:w-56"
       />
 
