@@ -4,7 +4,7 @@ import ProjectRow from "@/components/ProjectRow";
 import SkillsTable from "@/components/SkillsTable";
 import ExperienceRow from "@/components/ExperienceRow";
 import AwardRow from "@/components/AwardRow";
-import { profile, projects, publications, skills, learning, experience, education, awards } from "./data";
+import { profile, projects, publications, skills, learning, experience, education, awards, community } from "./data";
 
 export default function Home() {
   return (
@@ -40,6 +40,10 @@ export default function Home() {
 
         <Section title="Honors & Awards">
           {awards.map((a) => <AwardRow key={a.title} {...a} />)}
+        </Section>
+
+        <Section title="Community">
+          {community.map((c) => <ExperienceRow key={`${c.company}-${c.role}`} {...c} />)}
         </Section>
 
         <Section title="Get in Touch">

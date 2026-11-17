@@ -191,3 +191,12 @@ export const awards = [
     year: "2022-2025",
   },
 ];
+
+export const community = [
+  {
+    company: "Software & Hardware Club (SnH), UAP",
+    role: "Instructor, DevFront",
+    date: "",
+    desc: "Taught juniors about hackathons, web development, teamwork and building real projects, drawing on my experience in multiple national hackathons. Received a token of appreciation from the club.",
+  },
+];
