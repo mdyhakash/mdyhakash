@@ -4,7 +4,7 @@ import { MdEmail, MdDescription } from "react-icons/md";
 import { profile } from "@/app/data";
 
 const pill =
-  "inline-flex items-center gap-2 rounded-lg border border-violet-100 bg-violet-50 px-3.5 py-2 text-sm font-medium text-violet-700 transition hover:bg-violet-100";
+  "inline-flex items-center gap-2 rounded-lg border border-gray-200 bg-gray-50 px-3.5 py-2 text-sm font-medium text-gray-900 transition hover:bg-gray-100";
 
 export default function Header() {
   const { name, bio, highlight, avatar, links } = profile;
@@ -17,11 +17,11 @@ export default function Header() {
           width={224}
           height={224}
           priority
-          className="h-48 w-48 shrink-0 rounded-full bg-violet-100 object-cover sm:h-56 sm:w-56"
+          className="h-48 w-48 shrink-0 rounded-full bg-gray-200 object-cover sm:h-56 sm:w-56"
         />
       ) : (
-        <div className="flex h-48 w-48 shrink-0 items-end justify-center overflow-hidden rounded-full bg-violet-100 sm:h-56 sm:w-56">
-          <svg viewBox="0 0 24 24" fill="currentColor" className="h-36 w-36 text-violet-300">
+        <div className="flex h-48 w-48 shrink-0 items-end justify-center overflow-hidden rounded-full bg-gray-200 sm:h-56 sm:w-56">
+          <svg viewBox="0 0 24 24" fill="currentColor" className="h-36 w-36 text-gray-300">
             <circle cx="12" cy="8" r="4.5" />
             <path d="M2 24c0-6 4.5-9 10-9s10 3 10 9z" />
           </svg>
@@ -30,7 +30,7 @@ export default function Header() {
       <div className="text-center sm:text-left">
         <h1 className="text-3xl font-bold text-gray-900">{name}</h1>
         <p className="mt-3 leading-relaxed">
-          {bio} <em className="font-medium text-violet-700">{highlight}</em>
+          {bio} <em className="font-medium text-emerald-700">{highlight}</em>
         </p>
         <div className="mt-5 flex flex-wrap justify-center gap-2 sm:justify-start">
           <a href={links.github} target="_blank" rel="noreferrer" className={pill}><FaGithub /> GitHub</a>
@@ -40,7 +40,7 @@ export default function Header() {
             href={links.resume}
             target="_blank"
             rel="noreferrer"
-            className="inline-flex items-center gap-2 rounded-lg bg-violet-600 px-3.5 py-2 text-sm font-medium text-white transition hover:bg-violet-700"
+            className="inline-flex items-center gap-2 rounded-lg bg-gray-900 px-3.5 py-2 text-sm font-medium text-white transition hover:bg-gray-700"
           >
             <MdDescription /> Resume
           </a>

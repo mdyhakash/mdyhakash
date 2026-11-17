@@ -7,7 +7,7 @@ export default function ProjectRow({ name, desc, tech, links = [] }) {
       {links.length > 0 && (
         <div className="mt-2 flex gap-3 text-xs font-medium">
           {links.map((l) => (
-            <a key={l.label} href={l.href} target="_blank" rel="noreferrer" className="text-violet-600 hover:text-violet-800">
+            <a key={l.label} href={l.href} target="_blank" rel="noreferrer" className="text-emerald-700 hover:text-emerald-900">
               {l.label} ↗
             </a>
           ))}

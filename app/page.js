@@ -40,11 +40,11 @@ export default function Home() {
           <div className="flex flex-wrap gap-3">
             <a
               href={`mailto:${profile.links.email}`}
-              className="rounded-lg bg-violet-600 px-4 py-2.5 text-sm font-medium text-white transition hover:bg-violet-700"
+              className="rounded-lg bg-gray-900 px-4 py-2.5 text-sm font-medium text-white transition hover:bg-gray-700"
             >
               Email Me
             </a>
-            <span className="rounded-lg border border-violet-100 bg-violet-50 px-4 py-2.5 text-sm text-violet-700">
+            <span className="rounded-lg border border-gray-200 bg-gray-50 px-4 py-2.5 text-sm text-gray-900">
               {profile.links.email}
             </span>
           </div>

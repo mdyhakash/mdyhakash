@@ -4,7 +4,7 @@ export default function ExperienceRow({ company, role, date, desc }) {
       <div className="flex items-baseline justify-between gap-4">
         <p>
           <span className="font-semibold text-gray-900">{company}</span>
-          <span className="ml-2 text-xs text-violet-600">{role}</span>
+          <span className="ml-2 text-xs text-emerald-700">{role}</span>
         </p>
         <span className="shrink-0 text-xs text-gray-400">{date}</span>
       </div>
