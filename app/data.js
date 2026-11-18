@@ -119,13 +119,13 @@ export const experience = [
   },
   {
     company: "Eutropia IT Solution",
-    role: "Full-Stack Developer",
+    role: "Junior Software Engineer",
     date: "Feb 2026 – Jun 2026",
     desc: "Built the corporate website and core Medicine Mart e-commerce features across the Next.js frontend and Django backend, and upgraded other existing projects, working with design and backend teams.",
   },
   {
     company: "Datavro BD",
-    role: "Full-Stack Developer (Frontend Focused)",
+    role: "Junior Software Engineer - Intern",
     date: "Jan 2026 – Feb 2026",
     desc: "Built React components and turned design mock-ups into working interfaces alongside senior developers.",
   },
